@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="dao.tables" auto-import="true">
+    <class name="PointMenu">
+        <!-- 主键 ，映射-->
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="numbering" column="numbering" />
+        <property name="seatRotationId" column="seatRotationId" />
+        <property name="meals" column="meals" />
+        <property name="peopleCount" column="peopleCount" />
+        <property name="dishName" column="dishName" type="string" />
+        <property name="isPlaceOrder" column="isPlaceOrder" />
+        <property name="isGive" column="isGive" />
+        <property name="isReturn" column="isReturn" />
+        <property name="price" column="price" />
+        <property name="discount" column="discount" />
+        <property name="cookingId" column="cookingId" />
+    </class>
+</hibernate-mapping>
