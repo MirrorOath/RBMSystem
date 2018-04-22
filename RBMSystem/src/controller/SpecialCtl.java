@@ -9,12 +9,12 @@ import dao.util.UtilFactory;
 
 @Controller
 @RequestMapping(value = "/special/")
-public class Special {
+public class SpecialCtl {
 
     @RequestMapping("conBase")
     public @ResponseBody void conBase() {
         Session session = UtilFactory.getSession();
         session.close();
-        System.out.println("conBase");
+//        System.out.println("conBase");
     }
 }
