@@ -3,6 +3,7 @@ package dao.tables;
 public class RawMaterial {
     private Integer id;
     private Integer rawMId;
+    private Integer dishId;
     private String rawMName;
     private String rawMType;
     private String rawMBrand;
@@ -28,6 +29,14 @@ public class RawMaterial {
 
     public void setRawMId(Integer rawMId) {
         this.rawMId = rawMId;
+    }
+
+    public Integer getDishId() {
+        return dishId;
+    }
+
+    public void setDishId(Integer dishId) {
+        this.dishId = dishId;
     }
 
     public String getRawMName() {
@@ -112,10 +121,10 @@ public class RawMaterial {
 
     @Override
     public String toString() {
-        return "RawMaterial [id=" + id + ", rawMId=" + rawMId + ", rawMName=" + rawMName + ", rawMType=" + rawMType
-                + ", rawMBrand=" + rawMBrand + ", rawMOrigin=" + rawMOrigin + ", norm=" + norm + ", last=" + last
-                + ", purchaseUnit=" + purchaseUnit + ", consumptionUnit=" + consumptionUnit + ", price=" + price
-                + ", supplierId=" + supplierId + "]";
+        return "RawMaterial [id=" + id + ", rawMId=" + rawMId + ", dishId=" + dishId + ", rawMName=" + rawMName
+                + ", rawMType=" + rawMType + ", rawMBrand=" + rawMBrand + ", rawMOrigin=" + rawMOrigin + ", norm="
+                + norm + ", last=" + last + ", purchaseUnit=" + purchaseUnit + ", consumptionUnit=" + consumptionUnit
+                + ", price=" + price + ", supplierId=" + supplierId + "]";
     }
 
 }

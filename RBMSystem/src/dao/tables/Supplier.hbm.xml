@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="dao.tables" auto-import="true">
+    <class name="Supplier">
+        <!-- 主键 ，映射-->
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="numbering" column="numbering" />
+        <property name="name" column="name" type="string" />
+        <property name="rawMaterialName" column="rawMaterialName" type="string" />
+        <property name="address" column="address" type="string" />
+        <property name="phoneNumber" column="phoneNumber" type="string" />
+        <property name="rawMOrigin" column="rawMOrigin" type="string" />
+        <property name="fax" column="fax" type="string" />
+        <property name="contacts" column="contacts" type="string"/>
+        <property name="contactsNumber" column="contactsNumber" type="string" />
+        <property name="consumptionUnit" column="consumptionUnit" type="string" />
+        <property name="contractId" column="contractId" />
+    </class>
+</hibernate-mapping>

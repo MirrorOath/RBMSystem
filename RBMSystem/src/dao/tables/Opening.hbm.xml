@@ -4,7 +4,7 @@
     <class name="Opening">
         <!-- 主键 ，映射-->
         <id name="id" column="id">
-            <generator class="increment"/>
+            <generator class="native"/>
         </id>
         <property name="seatRotationId" column="seatRotationId" />
         <property name="receptionNumber" column="receptionNumber" />

@@ -1,3 +1,14 @@
+function conBase() {
+    $.ajax({
+        url : "special/conBase.action",
+        data : {},
+        type : "post",
+        dateType : "json",
+        success : function(data) {
+        }
+    })
+}
+
 function sendAjax() {
     $.ajax({
         url : "test/test.action",

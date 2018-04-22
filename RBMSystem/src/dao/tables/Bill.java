@@ -2,7 +2,7 @@ package dao.tables;
 
 import java.util.Date;
 
-public class Checkout {
+public class Bill {
     private Integer id;
     private Integer seatRotationId;
     private Date date;
@@ -11,7 +11,7 @@ public class Checkout {
     private Double amountsPayable;
     private Double actuallyPaid;
     private Double convertToRMB;
-    private Double change;
+    private Double changeMoney;
     private Integer payeeId;
 
     public Integer getId() {
@@ -78,12 +78,12 @@ public class Checkout {
         this.convertToRMB = convertToRMB;
     }
 
-    public Double getChange() {
-        return change;
+    public Double getChangeMoney() {
+        return changeMoney;
     }
 
-    public void setChange(Double change) {
-        this.change = change;
+    public void setChangeMoney(Double changeMoney) {
+        this.changeMoney = changeMoney;
     }
 
     public Integer getPayeeId() {
@@ -96,9 +96,10 @@ public class Checkout {
 
     @Override
     public String toString() {
-        return "Checkout [id=" + id + ", seatRotationId=" + seatRotationId + ", date=" + date + ", paymentTypes="
+        return "Bill [id=" + id + ", seatRotationId=" + seatRotationId + ", date=" + date + ", paymentTypes="
                 + paymentTypes + ", currency=" + currency + ", amountsPayable=" + amountsPayable + ", actuallyPaid="
-                + actuallyPaid + ", convertToRMB=" + convertToRMB + ", change=" + change + ", payeeId=" + payeeId + "]";
+                + actuallyPaid + ", convertToRMB=" + convertToRMB + ", changeMoney=" + changeMoney + ", payeeId="
+                + payeeId + "]";
     }
 
 }
