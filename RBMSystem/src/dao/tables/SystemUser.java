@@ -6,6 +6,7 @@ public class SystemUser {
     private Integer id;
     private String name;
     private String password;
+    private Integer AUT;
     private Date loginTime;
 
     public Integer getId() {
@@ -32,6 +33,14 @@ public class SystemUser {
         this.password = password;
     }
 
+    public Integer getAUT() {
+        return AUT;
+    }
+
+    public void setAUT(Integer aUT) {
+        AUT = aUT;
+    }
+
     public Date getLoginTime() {
         return loginTime;
     }
@@ -42,7 +51,8 @@ public class SystemUser {
 
     @Override
     public String toString() {
-        return "SystemUser [id=" + id + ", name=" + name + ", password=" + password + ", loginTime=" + loginTime + "]";
+        return "SystemUser [id=" + id + ", name=" + name + ", password=" + password + ", AUT=" + AUT + ", loginTime="
+                + loginTime + "]";
     }
 
 }

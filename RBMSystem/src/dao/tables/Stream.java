@@ -1,6 +1,6 @@
 package dao.tables;
 
-public class SeatRotation {
+public class Stream {
     private Integer id;
     private Integer streamId;
     private Integer tableId;

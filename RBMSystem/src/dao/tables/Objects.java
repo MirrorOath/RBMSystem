@@ -1,11 +1,10 @@
 package dao.tables;
 
-public class Item {
+public class Objects {
     private Integer id;
-    private Integer itemId;
     private String name;
     private Integer count;
-    private Integer outboundCount;
+    private Integer outCount;
     private Integer lost;
     private Double price;
 
@@ -15,14 +14,6 @@ public class Item {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(Integer itemId) {
-        this.itemId = itemId;
     }
 
     public String getName() {
@@ -41,12 +32,12 @@ public class Item {
         this.count = count;
     }
 
-    public Integer getOutboundCount() {
-        return outboundCount;
+    public Integer getOutCount() {
+        return outCount;
     }
 
-    public void setOutboundCount(Integer outboundCount) {
-        this.outboundCount = outboundCount;
+    public void setOutCount(Integer outCount) {
+        this.outCount = outCount;
     }
 
     public Integer getLost() {
@@ -67,8 +58,8 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item [id=" + id + ", itemId=" + itemId + ", name=" + name + ", count=" + count + ", outboundCount="
-                + outboundCount + ", lost=" + lost + ", price=" + price + "]";
+        return "Objects [id=" + id + ", name=" + name + ", count=" + count + ", outCount=" + outCount + ", lost=" + lost
+                + ", price=" + price + "]";
     }
 
 }

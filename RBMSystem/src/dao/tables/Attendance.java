@@ -2,7 +2,7 @@ package dao.tables;
 
 import java.util.Date;
 
-public class EmployeeAttendance {
+public class Attendance {
     private Integer id;
     private Integer employeeId;
     private Date start;

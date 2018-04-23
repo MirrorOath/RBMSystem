@@ -2,10 +2,9 @@ package dao.tables;
 
 public class Employee {
     private Integer id;
-    private Integer numbering;
     private String name;
-    private String responsibility;
-    private Integer isWork;
+    private String dutyType;
+    private String isWork;
 
     public Integer getId() {
         return id;
@@ -13,14 +12,6 @@ public class Employee {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getNumbering() {
-        return numbering;
-    }
-
-    public void setNumbering(Integer numbering) {
-        this.numbering = numbering;
     }
 
     public String getName() {
@@ -31,26 +22,25 @@ public class Employee {
         this.name = name;
     }
 
-    public String getResponsibility() {
-        return responsibility;
+    public String getDutyType() {
+        return dutyType;
     }
 
-    public void setResponsibility(String responsibility) {
-        this.responsibility = responsibility;
+    public void setDutyType(String dutyType) {
+        this.dutyType = dutyType;
     }
 
-    public Integer getIsWork() {
+    public String getIsWork() {
         return isWork;
     }
 
-    public void setIsWork(Integer isWork) {
+    public void setIsWork(String isWork) {
         this.isWork = isWork;
     }
 
     @Override
     public String toString() {
-        return "Employee [id=" + id + ", numbering=" + numbering + ", name=" + name + ", responsibility="
-                + responsibility + ", isWork=" + isWork + "]";
+        return "Employee [id=" + id + ", name=" + name + ", dutyType=" + dutyType + ", isWork=" + isWork + "]";
     }
 
 }

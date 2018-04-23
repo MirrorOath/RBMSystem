@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="dao.tables" auto-import="true">
-    <class name="RawMaterial">
+    <class name="Staple">
         <!-- 主键 ，映射-->
         <id name="id" column="id">
             <generator class="native"/>
         </id>
-        <property name="rawMId" column="rawMId" />
         <property name="dishId" column="dishId" />
         <property name="rawMName" column="rawMName" type="string" />
         <property name="rawMType" column="rawMType" type="string" />
         <property name="rawMBrand" column="rawMBrand" type="string" />
         <property name="rawMOrigin" column="rawMOrigin" type="string" />
-        <property name="norm" column="norm" type="string" />
+        <property name="specs" column="specs" type="string" />
         <property name="last" column="last" />
-        <property name="purchaseUnit" column="purchaseUnit" type="string" />
-        <property name="consumptionUnit" column="consumptionUnit" type="string" />
+        <property name="buyUnit" column="buyUnit" type="string" />
+        <property name="depleteUnit" column="depleteUnit" type="string" />
         <property name="price" column="price" />
-        <property name="supplierId" column="supplierId" />
+        <property name="providerId" column="providerId" />
     </class>
 </hibernate-mapping>

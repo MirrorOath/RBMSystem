@@ -1,19 +1,18 @@
 package dao.tables;
 
-public class RawMaterial {
+public class Staple {
     private Integer id;
-    private Integer rawMId;
     private Integer dishId;
     private String rawMName;
     private String rawMType;
     private String rawMBrand;
     private String rawMOrigin;
-    private String norm;
+    private String specs;
     private Integer last;
-    private String purchaseUnit;
-    private String consumptionUnit;
+    private String buyUnit;
+    private String depleteUnit;
     private Integer price;
-    private Integer supplierId;
+    private Integer providerId;
 
     public Integer getId() {
         return id;
@@ -21,14 +20,6 @@ public class RawMaterial {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getRawMId() {
-        return rawMId;
-    }
-
-    public void setRawMId(Integer rawMId) {
-        this.rawMId = rawMId;
     }
 
     public Integer getDishId() {
@@ -71,12 +62,12 @@ public class RawMaterial {
         this.rawMOrigin = rawMOrigin;
     }
 
-    public String getNorm() {
-        return norm;
+    public String getSpecs() {
+        return specs;
     }
 
-    public void setNorm(String norm) {
-        this.norm = norm;
+    public void setSpecs(String specs) {
+        this.specs = specs;
     }
 
     public Integer getLast() {
@@ -87,20 +78,20 @@ public class RawMaterial {
         this.last = last;
     }
 
-    public String getPurchaseUnit() {
-        return purchaseUnit;
+    public String getBuyUnit() {
+        return buyUnit;
     }
 
-    public void setPurchaseUnit(String purchaseUnit) {
-        this.purchaseUnit = purchaseUnit;
+    public void setBuyUnit(String buyUnit) {
+        this.buyUnit = buyUnit;
     }
 
-    public String getConsumptionUnit() {
-        return consumptionUnit;
+    public String getDepleteUnit() {
+        return depleteUnit;
     }
 
-    public void setConsumptionUnit(String consumptionUnit) {
-        this.consumptionUnit = consumptionUnit;
+    public void setDepleteUnit(String depleteUnit) {
+        this.depleteUnit = depleteUnit;
     }
 
     public Integer getPrice() {
@@ -111,20 +102,20 @@ public class RawMaterial {
         this.price = price;
     }
 
-    public Integer getSupplierId() {
-        return supplierId;
+    public Integer getProviderId() {
+        return providerId;
     }
 
-    public void setSupplierId(Integer supplierId) {
-        this.supplierId = supplierId;
+    public void setProviderId(Integer providerId) {
+        this.providerId = providerId;
     }
 
     @Override
     public String toString() {
-        return "RawMaterial [id=" + id + ", rawMId=" + rawMId + ", dishId=" + dishId + ", rawMName=" + rawMName
-                + ", rawMType=" + rawMType + ", rawMBrand=" + rawMBrand + ", rawMOrigin=" + rawMOrigin + ", norm="
-                + norm + ", last=" + last + ", purchaseUnit=" + purchaseUnit + ", consumptionUnit=" + consumptionUnit
-                + ", price=" + price + ", supplierId=" + supplierId + "]";
+        return "Staple [id=" + id + ", dishId=" + dishId + ", rawMName=" + rawMName + ", rawMType=" + rawMType
+                + ", rawMBrand=" + rawMBrand + ", rawMOrigin=" + rawMOrigin + ", specs=" + specs + ", last=" + last
+                + ", buyUnit=" + buyUnit + ", depleteUnit=" + depleteUnit + ", price=" + price + ", providerId="
+                + providerId + "]";
     }
 
 }

@@ -2,15 +2,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="dao.tables"
     auto-import="true">
-    <class name="Item">
+    <class name="Objects">
         <!-- 主键 ，映射 -->
         <id name="id" column="id">
             <generator class="native" />
         </id>
-        <property name="itemId" column="itemId" />
         <property name="name" column="name" type="string" />
         <property name="count" column="count" />
-        <property name="outboundCount" column="outboundCount" />
+        <property name="outCount" column="outCount" />
         <property name="lost" column="lost" />
         <property name="price" column="price" />
     </class>

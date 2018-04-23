@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="dao.tables" auto-import="true">
-    <class name="ConsumptionEvents">
+    <class name="DepleteEvent">
         <!-- 主键 ，映射-->
         <id name="id" column="id">
             <generator class="native"/>
         </id>
-        <property name="numbering" column="numbering" />
         <property name="date" column="date" type="timestamp" />
-        <property name="rawMaterialId" column="rawMaterialId" />
+        <property name="stapleId" column="stapleId" />
         <property name="count" column="count" />
     </class>
 </hibernate-mapping>

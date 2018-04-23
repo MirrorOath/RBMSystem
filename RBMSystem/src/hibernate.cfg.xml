@@ -26,19 +26,18 @@ PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sour
         <property name="hibernate.cache.use_query_cache">true</property>
         <property name="connection.useUnicode">true</property>
         <property name="connection.characterEncoding">UTF-8</property>
-        <mapping resource="dao/tables/Bill.hbm.xml" />
-        <mapping resource="dao/tables/ConsumptionEvents.hbm.xml" />
-        <mapping resource="dao/tables/DishMenu.hbm.xml" />
+        <mapping resource="dao/tables/Attendance.hbm.xml" />
+        <mapping resource="dao/tables/BuyEvent.hbm.xml" />
+        <mapping resource="dao/tables/DepleteEvent.hbm.xml" />
         <mapping resource="dao/tables/Employee.hbm.xml" />
-        <mapping
-            resource="dao/tables/EmployeeAttendance.hbm.xml" />
-        <mapping resource="dao/tables/Item.hbm.xml" />
-        <mapping resource="dao/tables/Opening.hbm.xml" />
-        <mapping resource="dao/tables/PointMenu.hbm.xml" />
-        <mapping resource="dao/tables/PurchaseEvent.hbm.xml" />
-        <mapping resource="dao/tables/RawMaterial.hbm.xml" />
-        <mapping resource="dao/tables/SeatRotation.hbm.xml" />
-        <mapping resource="dao/tables/Supplier.hbm.xml" />
-        <mapping resource="dao/tables/SystemUser.xml" />
+        <mapping resource="dao/tables/Menu.hbm.xml" />
+        <mapping resource="dao/tables/MProvider.hbm.xml" />
+        <mapping resource="dao/tables/Objects.hbm.xml" />
+        <mapping resource="dao/tables/Orders.hbm.xml" />
+        <mapping resource="dao/tables/Staple.hbm.xml" />
+        <mapping resource="dao/tables/Stream.hbm.xml" />
+        <mapping resource="dao/tables/SystemUser.hbm.xml" />
+        <mapping resource="dao/tables/TableBegin.hbm.xml" />
+        <mapping resource="dao/tables/TableEnds.hbm.xml" />
     </session-factory>
 </hibernate-configuration>
