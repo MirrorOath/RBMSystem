@@ -2,10 +2,12 @@ package dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import dao.tables.Attendance;
 import dao.util.UtilFactory;
 
+@Repository
 public class AttendanceDao {
 
     public Attendance update(Integer id, Attendance newObj) {

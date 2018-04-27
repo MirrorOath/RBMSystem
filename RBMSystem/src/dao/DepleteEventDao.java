@@ -2,10 +2,12 @@ package dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import dao.tables.DepleteEvent;
 import dao.util.UtilFactory;
 
+@Repository
 public class DepleteEventDao {
     
     public DepleteEvent update(Integer id, DepleteEvent newObj) {

@@ -2,10 +2,12 @@ package dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import dao.tables.SystemUser;
 import dao.util.UtilFactory;
 
+@Repository
 public class SystemUserDao {
     
     public SystemUser update(Integer id, SystemUser newObj) {

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="../jquery-easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../jquery-easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../jquery-easyui/demo/demo.css">
+	<script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery-easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../jquery-easyui/plugins/jquery.datagrid.js"></script>
+	<script type="text/javascript" src="../jquery/datagrid-detailview.js"></script>
+	<script type="text/javascript" src="../jquery/jquery.edatagrid.js"></script>
+	<style type="text/css">
+		form {
+			margin: 0;
+			padding: 0;
+		}
+
+		.dv-table td {
+			border: 0;
+		}
+
+		.dv-table input {
+			border: 1px solid #ccc;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function () {
+			$('#AttendanceCurd').edatagrid({
+				url: '../easyUi/easyUIGetAttendances.action',
+				saveUrl: '../easyUi/easyUISaveAttendance.action',
+				updateUrl: '../easyUi/easyUIUpdateAttendance.action',
+				destroyUrl: '../easyUi/easyUIDelAttendance.action'
+			});
+		});
+
+		$(function () {
+			$('#BuyEvent').edatagrid({
+				url: '../easyUi/easyUIGetBuyEvents.action',
+				saveUrl: '../easyUi/easyUISaveBuyEvent.action',
+				updateUrl: '../easyUi/easyUIUpdateBuyEvent.action',
+				destroyUrl: '../easyUi/easyUIDelBuyEvent.action'
+			});
+		});
+
+		$(function () {
+			$('#DepleteEvent').edatagrid({
+				url: '../easyUi/easyUIGetDepleteEvents.action',
+				saveUrl: '../easyUi/easyUISaveDepleteEvent.action',
+				updateUrl: '../easyUi/easyUIUpdateDepleteEvent.action',
+				destroyUrl: '../easyUi/easyUIDelDepleteEvent.action'
+			});
+		});
+
+		$(function () {
+			$('#Employee').edatagrid({
+				url: '../easyUi/easyUIGetEmployees.action',
+				saveUrl: '../easyUi/easyUISaveEmployee.action',
+				updateUrl: '../easyUi/easyUIUpdateEmployee.action',
+				destroyUrl: '../easyUi/easyUIDelEmployee.action'
+			});
+		});
+
+		$(function () {
+			$('#Menu').edatagrid({
+				url: '../easyUi/easyUIGetMenus.action',
+				saveUrl: '../easyUi/easyUISaveMenu.action',
+				updateUrl: '../easyUi/easyUIUpdateMenu.action',
+				destroyUrl: '../easyUi/easyUIDelMenu.action'
+			});
+		});
+
+		$(function () {
+			$('#MProvider').edatagrid({
+				url: '../easyUi/easyUIGetMProviders.action',
+				saveUrl: '../easyUi/easyUISaveMProvider.action',
+				updateUrl: '../easyUi/easyUIUpdateMProvider.action',
+				destroyUrl: '../easyUi/easyUIDelMProvider.action'
+			});
+		});
+
+		$(function () {
+			$('#Objects').edatagrid({
+				url: '../easyUi/easyUIGetObjectss.action',
+				saveUrl: '../easyUi/easyUISaveObjects.action',
+				updateUrl: '../easyUi/easyUIUpdateObjects.action',
+				destroyUrl: '../easyUi/easyUIDelObjects.action'
+			});
+		});
+
+		$(function () {
+			$('#Orders').edatagrid({
+				url: '../easyUi/easyUIGetOrderss.action',
+				saveUrl: '../easyUi/easyUISaveOrders.action',
+				updateUrl: '../easyUi/easyUIUpdateOrders.action',
+				destroyUrl: '../easyUi/easyUIDelOrders.action'
+			});
+		});
+
+		$(function () {
+			$('#dg').edatagrid({
+				url: '../easyUi/easyUIGetUsers.action',
+				saveUrl: '../easyUi/easyUISaveUser.action',
+				updateUrl: '../easyUi/easyUIUpdateUser.action',
+				destroyUrl: '../easyUi/easyUIDelUser.action'
+			});
+		});
+
+		$(function () {
+			$('#dg').edatagrid({
+				url: '../easyUi/easyUIGetUsers.action',
+				saveUrl: '../easyUi/easyUISaveUser.action',
+				updateUrl: '../easyUi/easyUIUpdateUser.action',
+				destroyUrl: '../easyUi/easyUIDelUser.action'
+			});
+		});
+
+		$(function () {
+			$('#dg').edatagrid({
+				url: '../easyUi/easyUIGetUsers.action',
+				saveUrl: '../easyUi/easyUISaveUser.action',
+				updateUrl: '../easyUi/easyUIUpdateUser.action',
+				destroyUrl: '../easyUi/easyUIDelUser.action'
+			});
+		});
+
+		$(function () {
+			$('#dg').edatagrid({
+				url: '../easyUi/easyUIGetUsers.action',
+				saveUrl: '../easyUi/easyUISaveUser.action',
+				updateUrl: '../easyUi/easyUIUpdateUser.action',
+				destroyUrl: '../easyUi/easyUIDelUser.action'
+			});
+		});
+
+		$(function () {
+			$('#dg').edatagrid({
+				url: '../easyUi/easyUIGetUsers.action',
+				saveUrl: '../easyUi/easyUISaveUser.action',
+				updateUrl: '../easyUi/easyUIUpdateUser.action',
+				destroyUrl: '../easyUi/easyUIDelUser.action'
+			});
+		});
+
+		$(function () {
+			$('#dg').edatagrid({
+				url: '../easyUi/easyUIGetUsers.action',
+				saveUrl: '../easyUi/easyUISaveUser.action',
+				updateUrl: '../easyUi/easyUIUpdateUser.action',
+				destroyUrl: '../easyUi/easyUIDelUser.action'
+			});
+		});
+
+		$(function () {
+			$('#dg').edatagrid({
+				url: '../easyUi/easyUIGetUsers.action',
+				saveUrl: '../easyUi/easyUISaveUser.action',
+				updateUrl: '../easyUi/easyUIUpdateUser.action',
+				destroyUrl: '../easyUi/easyUIDelUser.action'
+			});
+		});
+	</script>
+	<title>Insert title here</title>
+</head>
+
+<body>
+
+	<div class="demo-info" style="margin-bottom: 10px">
+		<div class="demo-tip icon-tip">&nbsp;</div>
+		<div>双击进行修改.</div>
+	</div>
+
+	<div>
+		<table id="AttendanceCurd" title="Attendance" style="width: 700px; height: 250px" toolbar="#AttendanceCurdToolbar" pagination="true"
+		 idField="id" rownumbers="true" fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="employeeId" width="50" editor="{type:'validatebox',options:{required:true}}">员工Id</th>
+					<th field="start" width="50" editor="{type:'validatebox',options:{required:true}}">开始时间</th>
+					<th field="end" width="50" editor="{type:'validatebox',options:{required:true}}">结束时间</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="AttendanceCurdToolbar">
+			<a href="#AttendanceCurd" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#AttendanceCurd').edatagrid('addRow')">添加</a>
+			<a href="#AttendanceCurd" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#AttendanceCurd').edatagrid('destroyRow')">删除</a>
+			<a href="#AttendanceCurd" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#AttendanceCurd').edatagrid('saveRow')">保存</a>
+			<a href="#AttendanceCurd" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#AttendanceCurd').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="BuyEvent" title="BuyEvent" style="width: 700px; height: 250px" toolbar="#BuyEventToolbar" pagination="true" idField="id"
+		 rownumbers="true" fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="stapleId" width="50" editor="{type:'validatebox',options:{required:true}}">物品ID</th>
+					<th field="count" width="50" editor="{type:'validatebox',options:{required:true}}">数量</th>
+					<th field="date" width="50" editor="{type:'validatebox',options:{required:true}}">购买日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="BuyEventToolbar">
+			<a href="#BuyEvent" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#BuyEvent').edatagrid('addRow')">添加</a>
+			<a href="#BuyEvent" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#BuyEvent').edatagrid('destroyRow')">删除</a>
+			<a href="#BuyEvent" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#BuyEvent').edatagrid('saveRow')">保存</a>
+			<a href="#BuyEvent" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#BuyEvent').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="DepleteEvent" title="DepleteEvent" style="width: 700px; height: 250px" toolbar="#DepleteEventToolbar" pagination="true"
+		 idField="id" rownumbers="true" fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="stapleId" width="50" editor="{type:'validatebox',options:{required:true}}">物品ID</th>
+					<th field="count" width="50" editor="{type:'validatebox',options:{required:true}}">数量</th>
+					<th field="date" width="50" editor="{type:'validatebox',options:{required:true}}">消耗日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="DepleteEventToolbar">
+			<a href="#DepleteEvent" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#DepleteEvent').edatagrid('addRow')">添加</a>
+			<a href="#DepleteEvent" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#DepleteEvent').edatagrid('destroyRow')">删除</a>
+			<a href="#DepleteEvent" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#DepleteEvent').edatagrid('saveRow')">保存</a>
+			<a href="#DepleteEvent" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#DepleteEvent').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="Employee" title="Employee" style="width: 700px; height: 250px" toolbar="#EmployeeToolbar" pagination="true" idField="id"
+		 rownumbers="true" fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="name" width="50" editor="{type:'validatebox',options:{required:true}}">用户名</th>
+					<th field="dutyType" width="50" editor="{type:'validatebox',options:{required:true}}">职责</th>
+					<th field="isWork" width="50" editor="{type:'validatebox',options:{required:true}}">是否在工作</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="EmployeeToolbar">
+			<a href="#Employee" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#Employee').edatagrid('addRow')">添加</a>
+			<a href="#Employee" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#Employee').edatagrid('destroyRow')">删除</a>
+			<a href="#Employee" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#Employee').edatagrid('saveRow')">保存</a>
+			<a href="#Employee" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#Employee').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="Menu" title="Menu" style="width: 700px; height: 250px" toolbar="#MenuToolbar" pagination="true" idField="id" rownumbers="true"
+		 fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="name" width="50" editor="{type:'validatebox',options:{required:true}}">菜单名</th>
+					<th field="type" width="50" editor="{type:'validatebox',options:{required:true}}">菜类</th>
+					<th field="specs" width="50" editor="{type:'validatebox',options:{required:true}}">规格</th>
+					<th field="price" width="50" editor="{type:'validatebox',options:{required:true}}">价格</th>
+					<th field="discount" width="50" editor="{type:'validatebox',options:{required:true}}">折扣</th>
+					<th field="note" width="50" editor="{type:'validatebox',options:{required:true}}">备注</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="MenuToolbar">
+			<a href="#Menu" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#Menu').edatagrid('addRow')">添加</a>
+			<a href="#Menu" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#Menu').edatagrid('destroyRow')">删除</a>
+			<a href="#Menu" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#Menu').edatagrid('saveRow')">保存</a>
+			<a href="#Menu" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#Menu').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="MProvider" title="MProvider" style="width: 700px; height: 250px" toolbar="#MProviderToolbar" pagination="true"
+		 idField="id" rownumbers="true" fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="name" width="50" editor="{type:'validatebox',options:{required:true}}">提供商名</th>
+					<th field="mName" width="50" editor="{type:'validatebox',options:{required:true}}">菜名</th>
+					<th field="address" width="50" editor="{type:'validatebox',options:{required:true}}">地址</th>
+					<th field="phone" width="50" editor="{type:'validatebox',options:{required:true}}">手机</th>
+					<th field="fax" width="50" editor="{type:'validatebox',options:{required:true}}">传真</th>
+					<th field="cMan" width="50" editor="{type:'validatebox',options:{required:true}}">联系人</th>
+					<th field="cManMobile" width="50" editor="{type:'validatebox',options:{required:true}}">联系人电话</th>
+					<th field="contractId" width="50" editor="{type:'validatebox',options:{required:true}}">协议ID</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="MProviderToolbar">
+			<a href="#MProvider" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#MProvider').edatagrid('addRow')">添加</a>
+			<a href="#MProvider" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#MProvider').edatagrid('destroyRow')">删除</a>
+			<a href="#MProvider" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#MProvider').edatagrid('saveRow')">保存</a>
+			<a href="#MProvider" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#MProvider').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="Objects" title="Objects" style="width: 700px; height: 250px" toolbar="#ObjectsToolbar" pagination="true" idField="id"
+		 rownumbers="true" fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="name" width="50" editor="{type:'validatebox',options:{required:true}}">物品名</th>
+					<th field="count" width="50" editor="{type:'validatebox',options:{required:true}}">数量</th>
+					<th field="outCount" width="50" editor="{type:'validatebox',options:{required:true}}">已出数量</th>
+					<th field="lost" width="50" editor="{type:'validatebox',options:{required:true}}">丢失</th>
+					<th field="price" width="50" editor="{type:'validatebox',options:{required:true}}">价格</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="ObjectsToolbar">
+			<a href="#Objects" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#Objects').edatagrid('addRow')">添加</a>
+			<a href="#Objects" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#Objects').edatagrid('destroyRow')">删除</a>
+			<a href="#Objects" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#Objects').edatagrid('saveRow')">保存</a>
+			<a href="#Objects" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#Objects').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="Orders" title="Orders" style="width: 700px; height: 250px" toolbar="#OrdersToolbar" pagination="true" idField="id"
+		 rownumbers="true" fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="streamNumber" width="50" editor="{type:'validatebox',options:{required:true}}">座位流编号</th>
+					<th field="dishType" width="50" editor="{type:'validatebox',options:{required:true}}">菜类</th>
+					<th field="dishNumber" width="50" editor="{type:'validatebox',options:{required:true}}">菜编号</th>
+					<th field="dishName" width="50" editor="{type:'validatebox',options:{required:true}}">菜名</th>
+					<th field="isOrdered" width="50" editor="{type:'validatebox',options:{required:true}}">是否已下单</th>
+					<th field="isGifts" width="50" editor="{type:'validatebox',options:{required:true}}">是否赠予</th>
+					<th field="isBack" width="50" editor="{type:'validatebox',options:{required:true}}">是否返回</th>
+					<th field="price" width="50" editor="{type:'validatebox',options:{required:true}}">价格</th>
+					<th field="discount" width="50" editor="{type:'validatebox',options:{required:true}}">折扣</th>
+					<th field="producterId" width="50" editor="{type:'validatebox',options:{required:true}}">做菜人ID</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="OrdersToolbar">
+			<a href="#Orders" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#Orders').edatagrid('addRow')">添加</a>
+			<a href="#Orders" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#Orders').edatagrid('destroyRow')">删除</a>
+			<a href="#Orders" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#Orders').edatagrid('saveRow')">保存</a>
+			<a href="#Orders" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#Orders').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="dg" title="My Users" style="width: 700px; height: 250px" toolbar="#dgToolbar" pagination="true" idField="id" rownumbers="true"
+		 fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="userName" width="50" editor="{type:'validatebox',options:{required:true}}">用户名</th>
+					<th field="password" width="50" editor="{type:'validatebox',options:{required:true}}">密码</th>
+					<th field="age" width="50" editor="text">年龄</th>
+					<th field="address" width="50" editor="{type:'validatebox',options:{required:true}}">地址</th>
+					<th field="date" width="50" editor="{type:'validatebox',options:{validType:'datetime'}}">注册日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="dgToolbar">
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg').edatagrid('addRow')">添加</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg').edatagrid('destroyRow')">删除</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg').edatagrid('saveRow')">保存</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="dg" title="My Users" style="width: 700px; height: 250px" toolbar="#dgToolbar" pagination="true" idField="id" rownumbers="true"
+		 fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="userName" width="50" editor="{type:'validatebox',options:{required:true}}">用户名</th>
+					<th field="password" width="50" editor="{type:'validatebox',options:{required:true}}">密码</th>
+					<th field="age" width="50" editor="text">年龄</th>
+					<th field="address" width="50" editor="{type:'validatebox',options:{required:true}}">地址</th>
+					<th field="date" width="50" editor="{type:'validatebox',options:{validType:'datetime'}}">注册日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="dgToolbar">
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg').edatagrid('addRow')">添加</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg').edatagrid('destroyRow')">删除</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg').edatagrid('saveRow')">保存</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="dg" title="My Users" style="width: 700px; height: 250px" toolbar="#dgToolbar" pagination="true" idField="id" rownumbers="true"
+		 fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="userName" width="50" editor="{type:'validatebox',options:{required:true}}">用户名</th>
+					<th field="password" width="50" editor="{type:'validatebox',options:{required:true}}">密码</th>
+					<th field="age" width="50" editor="text">年龄</th>
+					<th field="address" width="50" editor="{type:'validatebox',options:{required:true}}">地址</th>
+					<th field="date" width="50" editor="{type:'validatebox',options:{validType:'datetime'}}">注册日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="dgToolbar">
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg').edatagrid('addRow')">添加</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg').edatagrid('destroyRow')">删除</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg').edatagrid('saveRow')">保存</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="dg" title="My Users" style="width: 700px; height: 250px" toolbar="#dgToolbar" pagination="true" idField="id" rownumbers="true"
+		 fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="userName" width="50" editor="{type:'validatebox',options:{required:true}}">用户名</th>
+					<th field="password" width="50" editor="{type:'validatebox',options:{required:true}}">密码</th>
+					<th field="age" width="50" editor="text">年龄</th>
+					<th field="address" width="50" editor="{type:'validatebox',options:{required:true}}">地址</th>
+					<th field="date" width="50" editor="{type:'validatebox',options:{validType:'datetime'}}">注册日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="dgToolbar">
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg').edatagrid('addRow')">添加</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg').edatagrid('destroyRow')">删除</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg').edatagrid('saveRow')">保存</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="dg" title="My Users" style="width: 700px; height: 250px" toolbar="#dgToolbar" pagination="true" idField="id" rownumbers="true"
+		 fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="userName" width="50" editor="{type:'validatebox',options:{required:true}}">用户名</th>
+					<th field="password" width="50" editor="{type:'validatebox',options:{required:true}}">密码</th>
+					<th field="age" width="50" editor="text">年龄</th>
+					<th field="address" width="50" editor="{type:'validatebox',options:{required:true}}">地址</th>
+					<th field="date" width="50" editor="{type:'validatebox',options:{validType:'datetime'}}">注册日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="dgToolbar">
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg').edatagrid('addRow')">添加</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg').edatagrid('destroyRow')">删除</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg').edatagrid('saveRow')">保存</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="dg" title="My Users" style="width: 700px; height: 250px" toolbar="#dgToolbar" pagination="true" idField="id" rownumbers="true"
+		 fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="userName" width="50" editor="{type:'validatebox',options:{required:true}}">用户名</th>
+					<th field="password" width="50" editor="{type:'validatebox',options:{required:true}}">密码</th>
+					<th field="age" width="50" editor="text">年龄</th>
+					<th field="address" width="50" editor="{type:'validatebox',options:{required:true}}">地址</th>
+					<th field="date" width="50" editor="{type:'validatebox',options:{validType:'datetime'}}">注册日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="dgToolbar">
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg').edatagrid('addRow')">添加</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg').edatagrid('destroyRow')">删除</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg').edatagrid('saveRow')">保存</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+	<div>
+		<table id="dg" title="My Users" style="width: 700px; height: 250px" toolbar="#dgToolbar" pagination="true" idField="id" rownumbers="true"
+		 fitColumns="true" singleSelect="true">
+			<thead>
+				<tr>
+					<th field="userName" width="50" editor="{type:'validatebox',options:{required:true}}">用户名</th>
+					<th field="password" width="50" editor="{type:'validatebox',options:{required:true}}">密码</th>
+					<th field="age" width="50" editor="text">年龄</th>
+					<th field="address" width="50" editor="{type:'validatebox',options:{required:true}}">地址</th>
+					<th field="date" width="50" editor="{type:'validatebox',options:{validType:'datetime'}}">注册日期</th>
+				</tr>
+			</thead>
+		</table>
+		<div id="dgToolbar">
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg').edatagrid('addRow')">添加</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg').edatagrid('destroyRow')">删除</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg').edatagrid('saveRow')">保存</a>
+			<a href="#dg" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg').edatagrid('cancelRow')">取消</a>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -2,10 +2,12 @@ package dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import dao.tables.MProvider;
 import dao.util.UtilFactory;
 
+@Repository
 public class MProviderDao {
     
     public MProvider update(Integer id, MProvider newObj) {

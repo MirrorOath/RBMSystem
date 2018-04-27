@@ -2,10 +2,12 @@ package dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import dao.tables.BuyEvent;
 import dao.util.UtilFactory;
 
+@Repository
 public class BuyEventDao {
     
     public BuyEvent update(Integer id, BuyEvent newBuyEvent) {

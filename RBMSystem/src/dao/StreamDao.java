@@ -2,10 +2,12 @@ package dao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import dao.tables.Stream;
 import dao.util.UtilFactory;
 
+@Repository
 public class StreamDao {
     
     public Stream update(Integer id, Stream newObj) {
