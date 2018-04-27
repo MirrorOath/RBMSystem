@@ -11,7 +11,7 @@ public class Staple {
     private Integer last;
     private String buyUnit;
     private String depleteUnit;
-    private Integer price;
+    private Double price;
     private Integer providerId;
 
     public Integer getId() {
@@ -94,11 +94,11 @@ public class Staple {
         this.depleteUnit = depleteUnit;
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

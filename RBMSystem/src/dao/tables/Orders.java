@@ -3,7 +3,7 @@ package dao.tables;
 public class Orders {
     private Integer id;
     private Integer streamNumber;
-    private Integer dishType;
+    private String dishType;
     private Integer dishNumber;
     private String dishName;
     private Integer isOrdered;
@@ -29,11 +29,11 @@ public class Orders {
         this.streamNumber = streamNumber;
     }
 
-    public Integer getDishType() {
+    public String getDishType() {
         return dishType;
     }
 
-    public void setDishType(Integer dishType) {
+    public void setDishType(String dishType) {
         this.dishType = dishType;
     }
 
@@ -103,7 +103,7 @@ public class Orders {
 
     @Override
     public String toString() {
-        return "Orders [id=" + id + ", streamNumber=" + streamNumber + ", dishType=" + dishType + ", dishNumber="
+        return "POrders [id=" + id + ", streamNumber=" + streamNumber + ", dishType=" + dishType + ", dishNumber="
                 + dishNumber + ", dishName=" + dishName + ", isOrdered=" + isOrdered + ", isGifts=" + isGifts
                 + ", isBack=" + isBack + ", price=" + price + ", discount=" + discount + ", producterId=" + producterId
                 + "]";

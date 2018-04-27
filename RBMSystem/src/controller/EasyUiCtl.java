@@ -30,7 +30,7 @@ public class EasyUiCtl {
     @Autowired
     UtilDao<Objects> objectsUDao;
     @Autowired
-    UtilDao<Orders> ordersUDao;
+    UtilDao<Orders> pOordersUDao;
     @Autowired
     UtilDao<Staple> stapleUDao;
     @Autowired
@@ -38,9 +38,9 @@ public class EasyUiCtl {
     @Autowired
     UtilDao<SystemUser> systemUserUDao;
     @Autowired
-    UtilDao<TableBeginDao> tableBeginUDao;
+    UtilDao<TableBegin> tableBeginUDao;
     @Autowired
-    UtilDao<TableEndsDao> tableEndsUDao;
+    UtilDao<TableEnds> tableEndsUDao;
     @Autowired
     AttendanceDao attendanceDao;
     @Autowired
@@ -56,7 +56,7 @@ public class EasyUiCtl {
     @Autowired
     ObjectsDao objectsDao;
     @Autowired
-    OrdersDao ordersDao;
+    POrdersDao pOrdersDao;
     @Autowired
     StapleDao stapleDao;
     @Autowired
@@ -149,7 +149,8 @@ public class EasyUiCtl {
     }
 
     @RequestMapping("easyUIUpdateDepleteEvent")
-    public @ResponseBody DepleteEvent easyUIUpdateDepleteEvent(Integer id, Integer stapleId, Integer count, String date) {
+    public @ResponseBody DepleteEvent easyUIUpdateDepleteEvent(Integer id, Integer stapleId, Integer count,
+            String date) {
         DepleteEvent obj = new DepleteEvent();
         obj.setStapleId(stapleId);
         obj.setCount(count);
@@ -262,25 +263,189 @@ public class EasyUiCtl {
 
     @RequestMapping("easyUIGetOrderss")
     public @ResponseBody List<Orders> easyUIGetOrderss() {
-        List<Orders> Orders = ordersUDao.getAll("Orders");
+        List<Orders> Orders = pOordersUDao.getAll("Orders");
         return Orders;
     }
 
     @RequestMapping("easyUISaveOrders")
     public @ResponseBody Orders easyUISaveOrders(Orders obj) {
-        Orders rt = ordersUDao.save(obj);
+        Orders rt = pOordersUDao.save(obj);
         return rt;
     }
 
     @RequestMapping("easyUIUpdateOrders")
     public @ResponseBody Orders easyUIUpdateOrders(Integer id, Orders obj) {
-        Orders rt = ordersDao.update(id, obj);
+        Orders rt = pOrdersDao.update(id, obj);
         return rt;
     }
 
     @RequestMapping("easyUIDelOrders")
     public @ResponseBody boolean easyUIDelOrders(Integer id) {
-        ordersUDao.del(ordersUDao.getById("Orders", id));
+        pOordersUDao.del(pOordersUDao.getById("Orders", id));
+        return true;
+    }
+
+    @RequestMapping("easyUIGetStaples")
+    public @ResponseBody List<Staple> easyUIGetStaples() {
+        List<Staple> Staple = stapleUDao.getAll("Staple");
+        return Staple;
+    }
+
+    @RequestMapping("easyUISaveStaple")
+    public @ResponseBody Staple easyUISaveStaple(Staple obj) {
+        Staple rt = stapleUDao.save(obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIUpdateStaple")
+    public @ResponseBody Staple easyUIUpdateStaple(Integer id, Staple obj) {
+        Staple rt = stapleDao.update(id, obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIDelStaple")
+    public @ResponseBody boolean easyUIDelStaple(Integer id) {
+        stapleUDao.del(stapleUDao.getById("Staple", id));
+        return true;
+    }
+
+    @RequestMapping("easyUIGetStreams")
+    public @ResponseBody List<Stream> easyUIGetStreams() {
+        List<Stream> Stream = streamUDao.getAll("Stream");
+        return Stream;
+    }
+
+    @RequestMapping("easyUISaveStream")
+    public @ResponseBody Stream easyUISaveStream(Stream obj) {
+        Stream rt = streamUDao.save(obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIUpdateStream")
+    public @ResponseBody Stream easyUIUpdateStream(Integer id, Stream obj) {
+        Stream rt = streamDao.update(id, obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIDelStream")
+    public @ResponseBody boolean easyUIDelStream(Integer id) {
+        streamUDao.del(streamUDao.getById("Stream", id));
+        return true;
+    }
+
+    @RequestMapping("easyUIGetSystemUsers")
+    public @ResponseBody List<SystemUser> easyUIGetSystemUsers() {
+        List<SystemUser> SystemUser = systemUserUDao.getAll("SystemUser");
+        return SystemUser;
+    }
+
+    @RequestMapping("easyUISaveSystemUser")
+    public @ResponseBody SystemUser easyUISaveSystemUser(String name, String password, Integer AUT, String loginTime) {
+        SystemUser obj = new SystemUser();
+        obj.setName(name);
+        obj.setPassword(password);
+        obj.setAUT(AUT);
+        obj.setLoginTime(Count.stringToDate(loginTime));
+        SystemUser rt = systemUserUDao.save(obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIUpdateSystemUser")
+    public @ResponseBody SystemUser easyUIUpdateSystemUser(Integer id, String name, String password, Integer AUT,
+            String loginTime) {
+        SystemUser obj = new SystemUser();
+        obj.setName(name);
+        obj.setPassword(password);
+        obj.setAUT(AUT);
+        obj.setLoginTime(Count.stringToDate(loginTime));
+        SystemUser rt = systemUserDao.update(id, obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIDelSystemUser")
+    public @ResponseBody boolean easyUIDelSystemUser(Integer id) {
+        systemUserUDao.del(systemUserUDao.getById("SystemUser", id));
+        return true;
+    }
+
+    @RequestMapping("easyUIGetTableBegins")
+    public @ResponseBody List<TableBegin> easyUIGetTableBegins() {
+        List<TableBegin> TableBegin = tableBeginUDao.getAll("TableBegin");
+        return TableBegin;
+    }
+
+    @RequestMapping("easyUISaveTableBegin")
+    public @ResponseBody TableBegin easyUISaveTableBegin(Integer streamId, Integer waiterId, String date) {
+        TableBegin obj = new TableBegin();
+        obj.setStreamId(streamId);
+        obj.setWaiterId(waiterId);
+        obj.setDate(Count.stringToDate(date));
+        TableBegin rt = tableBeginUDao.save(obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIUpdateTableBegin")
+    public @ResponseBody TableBegin easyUIUpdateTableBegin(Integer id, Integer streamId, Integer waiterId,
+            String date) {
+        TableBegin obj = new TableBegin();
+        obj.setStreamId(streamId);
+        obj.setWaiterId(waiterId);
+        obj.setDate(Count.stringToDate(date));
+        TableBegin rt = tableBeginDao.update(id, obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIDelTableBegin")
+    public @ResponseBody boolean easyUIDelTableBegin(Integer id) {
+        tableBeginUDao.del(tableBeginUDao.getById("TableBegin", id));
+        return true;
+    }
+
+    @RequestMapping("easyUIGetTableEndss")
+    public @ResponseBody List<TableEnds> easyUIGetTableEndss() {
+        List<TableEnds> TableEnds = tableEndsUDao.getAll("TableEnds");
+        return TableEnds;
+    }
+
+    @RequestMapping("easyUISaveTableEnds")
+    public @ResponseBody TableEnds easyUISaveTableEnds(Integer streamId, String date, Integer typeOfCoin,
+            Integer nameOfCoin, Double shouldPay, Double payActually, Double convertToRMB, Double changeMoney,
+            Integer payeeId) {
+        TableEnds obj = new TableEnds();
+        obj.setStreamId(streamId);
+        obj.setDate(Count.stringToDate(date));
+        obj.setTypeOfCoin(typeOfCoin);
+        obj.setNameOfCoin(nameOfCoin);
+        obj.setShouldPay(shouldPay);
+        obj.setPayActually(payActually);
+        obj.setConvertToRMB(convertToRMB);
+        obj.setChangeMoney(changeMoney);
+        obj.setPayeeId(payeeId);
+        TableEnds rt = tableEndsUDao.save(obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIUpdateTableEnds")
+    public @ResponseBody TableEnds easyUIUpdateTableEnds(Integer id, Integer streamId, String date, Integer typeOfCoin,
+            Integer nameOfCoin, Double shouldPay, Double payActually, Double convertToRMB, Double changeMoney,
+            Integer payeeId) {
+        TableEnds obj = new TableEnds();
+        obj.setStreamId(streamId);
+        obj.setDate(Count.stringToDate(date));
+        obj.setTypeOfCoin(typeOfCoin);
+        obj.setNameOfCoin(nameOfCoin);
+        obj.setShouldPay(shouldPay);
+        obj.setPayActually(payActually);
+        obj.setConvertToRMB(convertToRMB);
+        obj.setChangeMoney(changeMoney);
+        obj.setPayeeId(payeeId);
+        TableEnds rt = tableEndsDao.update(id, obj);
+        return rt;
+    }
+
+    @RequestMapping("easyUIDelTableEnds")
+    public @ResponseBody boolean easyUIDelTableEnds(Integer id) {
+        tableEndsUDao.del(tableEndsUDao.getById("TableEnds", id));
         return true;
     }
 

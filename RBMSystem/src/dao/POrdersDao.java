@@ -8,7 +8,7 @@ import dao.tables.Orders;
 import dao.util.UtilFactory;
 
 @Repository
-public class OrdersDao {
+public class POrdersDao {
     public Orders update(Integer id, Orders newObj) {
         Session session = UtilFactory.getSession();
         Transaction tx = session.beginTransaction();
