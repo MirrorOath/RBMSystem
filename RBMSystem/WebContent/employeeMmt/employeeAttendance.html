@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" charset="UTF-8" name="viewport"
+	content="width=device-width, initial-scale=1.0">
+<title>人员登记</title>
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	media="screen">
+
+</head>
+
+<body style="background-color: #878281">
+	<script src="../jquery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<script src="../util/js/navigationBar.js"></script>
+    <script src="ajax.js"></script>
+	<div id="navigationBar"></div>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="row-fluid">
+					<div class="span2"></div>
+					<div class="span6">
+                        <label class="control-label" for="work">输入员工ID:</label>
+						<input class="input-medium search-query" type="text" id="work" />
+						<button onclick="javascript:atdc(1)" class="btn">上班</button>
+					</div>
+					<div class="span4"></div>
+				</div>
+				<div class="row-fluid">
+					<div class="span2"></div>
+					<div class="span6">
+                        <label class="control-label" for="home">输入员工ID:</label>
+						<input class="input-medium search-query" type="text" id="home" />
+						<button onclick="javascript:atdc(2)" class="btn">下班</button>
+					</div>
+					<div class="span4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
