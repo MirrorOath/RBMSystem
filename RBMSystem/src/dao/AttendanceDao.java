@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.Date;
+import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -34,17 +35,21 @@ public class AttendanceDao {
 
         Date date = new Date();
         date.setTime(date.getTime() - (24 * 3600 * 1000));
-        Query query = session.createQuery("FROM Attendance WHERE 'start' > ? AND 'employeeId' = ?");
-        query.setString(0, Count.getStringDate(date));
-        query.setString(1, empId.toString());
         Date unHomeDate = Count.stringToDate("1970-01-01 00:00:00");
-//        query.setString(2, Count.getStringDate(unHomeDate));
+        Query query = session.createQuery("FROM Attendance WHERE employeeId = ? and startTime > ? and endTime = ?");
+        query.setString(0, "1");
+        query.setString(1, Count.getStringDate(date));
+        query.setString(2, Count.getStringDate(unHomeDate));
         System.out.println(Count.getStringDate(date) + "--" + empId + "--" + Count.getStringDate(unHomeDate));
         Attendance obj = (Attendance) query.uniqueResult();
 
         tx.commit();
         session.close();
         return obj;
+    }
+    
+    public List<Attendance> getAtdcByEmpId(Integer empId){
+        return null;
     }
 
 }

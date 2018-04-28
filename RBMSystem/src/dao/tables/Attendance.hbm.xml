@@ -7,7 +7,7 @@
             <generator class="native"/>
         </id>
         <property name="employeeId" column="employeeId" />
-        <property name="start" column="start" type="timestamp" />
-        <property name="end" column="end" type="timestamp" />
+        <property name="start" column="startTime" type="timestamp" />
+        <property name="end" column="endTime" type="timestamp" />
     </class>
 </hibernate-mapping>
