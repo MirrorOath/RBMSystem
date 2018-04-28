@@ -13,10 +13,20 @@ function atdc(type) {
         type : "post",
         dateType : "json",
         success : function(data) {
-            if (data == false)
-                alert("登记失败");
-            else
+            switch (data) {
+            case 0:
                 alert("登记成功");
+                break;
+            case 1:
+                alert("上班登记失败，已有24小时内上班记录");
+                break;
+            case 2:
+                alert("下班登记失败，未有24小时内上班记录");
+                break;
+            case 3:
+                alert("请输入员工号");
+                break;
+            }
         }
     })
 }

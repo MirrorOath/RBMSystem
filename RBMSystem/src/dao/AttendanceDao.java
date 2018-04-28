@@ -47,9 +47,5 @@ public class AttendanceDao {
         session.close();
         return obj;
     }
-    
-    public List<Attendance> getAtdcByEmpId(Integer empId){
-        return null;
-    }
 
 }

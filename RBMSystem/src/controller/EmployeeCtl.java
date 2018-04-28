@@ -25,26 +25,29 @@ public class EmployeeCtl {
     AttendanceDao attendanceDao;
     @Autowired
     EmployeeDao employeeDao;
-    
 
     @RequestMapping("atdc")
-    public @ResponseBody boolean atdc(Integer id, Integer type) {
-        if(type == 1) {
+    public @ResponseBody Integer atdc(Integer id, Integer type) {
+        if(id == null || type == null)
+            return 3;
+        if (type == 1) {
+            if(attendanceDao.getUnHomeByEmpId(id) != null)
+                return 1;
             Attendance obj = new Attendance();
             obj.setEmployeeId(id);
             obj.setStart(new Date());
             obj.setEnd(Count.stringToDate("1970-01-01 00:00:00"));
             attendanceUDao.save(obj);
-            return true;
+            return 0;
         }
-        if(type == 2) {
+        if (type == 2) {
             Attendance obj = attendanceDao.getUnHomeByEmpId(id);
-            if(obj == null)
-                return false;
+            if (obj == null)
+                return 2;
             obj.setEnd(new Date());
             attendanceDao.update(obj.getId(), obj);
         }
-        return true;
+        return 0;
     }
 
 }
