@@ -6,8 +6,8 @@ public class TableEnds {
     private Integer id;
     private Integer streamId;
     private Date date;
-    private Integer typeOfCoin;
-    private Integer nameOfCoin;
+    private String typeOfCoin;
+    private String nameOfCoin;
     private Double shouldPay;
     private Double payActually;
     private Double convertToRMB;
@@ -38,19 +38,19 @@ public class TableEnds {
         this.date = date;
     }
 
-    public Integer getTypeOfCoin() {
+    public String getTypeOfCoin() {
         return typeOfCoin;
     }
 
-    public void setTypeOfCoin(Integer typeOfCoin) {
+    public void setTypeOfCoin(String typeOfCoin) {
         this.typeOfCoin = typeOfCoin;
     }
 
-    public Integer getNameOfCoin() {
+    public String getNameOfCoin() {
         return nameOfCoin;
     }
 
-    public void setNameOfCoin(Integer nameOfCoin) {
+    public void setNameOfCoin(String nameOfCoin) {
         this.nameOfCoin = nameOfCoin;
     }
 

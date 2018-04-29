@@ -13,6 +13,9 @@
 <body style="background-color: #878281">
     <script src="../jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="ajax.js"></script>
+    <script src="../util/js/navigationBar.js"></script>
+    <div id="navigationBar"></div>
 
 
 	<div class="container-fluid">
@@ -65,61 +68,71 @@
 												</div>
 												<label class="control-label" for="dishType">餐类型</label>
 												<div class="btn-group">
-													<button class="btn" name="isBack">Action</button>
+													<button class="btn" id="dishType">Action</button>
 													<button data-toggle="dropdown" class="btn dropdown-toggle">
 														<span class="caret"></span>
 													</button>
 													<ul class="dropdown-menu">
 														<li>
-															<a href="#">是</a>
+															<a href="javascript:SetFirstStr('凉菜','dishType')">凉菜</a>
 														</li>
 														<li>
-															<a href="#">否</a>
+															<a href="javascript:SetFirstStr('冷品','dishType')">冷品</a>
 														</li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('甜品','dishType')">甜品</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('水果','dishType')">水果</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('热菜','dishType')">热菜</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('家常','dishType')">家常</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('特色','dishType')">特色</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('酒水','dishType')">酒水</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('主食','dishType')">主食</a>
+                                                        </li>
 													</ul>
 												</div>
-												<label class="control-label" for="dishName">菜名</label>
-												<div class="btn-group">
-													<button class="btn" name="isBack">Action</button>
-													<button data-toggle="dropdown" class="btn dropdown-toggle">
-														<span class="caret"></span>
-													</button>
-													<ul class="dropdown-menu">
-														<li>
-															<a href="#">是</a>
-														</li>
-														<li>
-															<a href="#">否</a>
-														</li>
-													</ul>
-												</div>
+                                                <label class="control-label" for="dishName">菜名</label>
+                                                <div class="controls">
+                                                    <input id="dishName" type="text" />
+                                                </div>
 												<label>是否下单</label>
 												<div class="btn-group">
-													<button class="btn" name="isBack">Action</button>
+													<button class="btn" id="isOrdered">Action</button>
 													<button data-toggle="dropdown" class="btn dropdown-toggle">
 														<span class="caret"></span>
 													</button>
 													<ul class="dropdown-menu">
 														<li>
-															<a href="#">是</a>
+															<a href="javascript:YorN('yes','isOrdered')">是</a>
 														</li>
 														<li>
-															<a href="#">否</a>
+															<a href="javascript:YorN('no','isOrdered')">否</a>
 														</li>
 													</ul>
 												</div>
 												<label>是否赠予</label>
 												<div class="btn-group">
-													<button class="btn" name="isBack">Action</button>
+													<button class="btn" id="isGifts">Action</button>
 													<button data-toggle="dropdown" class="btn dropdown-toggle">
 														<span class="caret"></span>
 													</button>
 													<ul class="dropdown-menu">
 														<li>
-															<a href="#">是</a>
+															<a href="javascript:YorN('yes','isGifts')">是</a>
 														</li>
 														<li>
-															<a href="#">否</a>
+															<a href="javascript:YorN('no','isGifts')">否</a>
 														</li>
 													</ul>
 												</div>
@@ -129,16 +142,16 @@
 											<div class="control-group">
 												<label>是否退回</label>
 												<div class="btn-group">
-													<button class="btn" name="isBack">Action</button>
+													<button class="btn" id="isBack">Action</button>
 													<button data-toggle="dropdown" class="btn dropdown-toggle">
 														<span class="caret"></span>
 													</button>
 													<ul class="dropdown-menu">
 														<li>
-															<a href="#">是</a>
+															<a href="javascript:YorN('no','isBack')">是</a>
 														</li>
 														<li>
-															<a href="#">否</a>
+															<a href="javascript:YorN('no','isBack')">否</a>
 														</li>
 													</ul>
 												</div>
@@ -150,7 +163,7 @@
 												<div class="controls">
 													<input id="discount" type="text" />
 												</div>
-												<label class="control-label" for="producterId">做菜人</label>
+												<label class="control-label" for="producterId">做菜人ID</label>
 												<div class="controls">
 													<input id="producterId" type="text" />
 												</div>
@@ -183,32 +196,56 @@
 												</div>
 												<label>支付种类</label>
 												<div class="btn-group">
-													<button class="btn" name="typeOfCoin">Action</button>
+													<button class="btn" id="typeOfCoin">Action</button>
 													<button data-toggle="dropdown" class="btn dropdown-toggle">
 														<span class="caret"></span>
 													</button>
 													<ul class="dropdown-menu">
 														<li>
-															<a href="#">是</a>
+															<a href="javascript:SetFirstStr('支付宝', 'typeOfCoin')">支付宝</a>
 														</li>
 														<li>
-															<a href="#">否</a>
+															<a href="javascript:SetFirstStr('微信', 'typeOfCoin')">微信</a>
 														</li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('信用卡', 'typeOfCoin')">信用卡</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('PayPal', 'typeOfCoin')">PayPal</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('银联', 'typeOfCoin')">银联</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('支票', 'typeOfCoin')">支票</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('现金', 'typeOfCoin')">现金</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('赠送', 'typeOfCoin')">赠送</a>
+                                                        </li>
 													</ul>
 												</div>
 												<label>支付货币名称</label>
 												<div class="btn-group">
-													<button class="btn" name="nameOfCoin">Action</button>
+													<button class="btn" id="nameOfCoin">Action</button>
 													<button data-toggle="dropdown" class="btn dropdown-toggle">
 														<span class="caret"></span>
 													</button>
 													<ul class="dropdown-menu">
 														<li>
-															<a href="#">是</a>
+															<a href="javascript:SetFirstStr('人名币', 'nameOfCoin')">人名币</a>
 														</li>
 														<li>
-															<a href="#">否</a>
+															<a href="javascript:SetFirstStr('美元', 'nameOfCoin')">美元</a>
 														</li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('日元', 'nameOfCoin')">日元</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:SetFirstStr('欧元', 'nameOfCoin')">欧元</a>
+                                                        </li>
 													</ul>
 												</div>
 												<label class="control-label" for="shouldPay">应付</label>

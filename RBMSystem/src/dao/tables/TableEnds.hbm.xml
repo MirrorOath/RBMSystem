@@ -12,8 +12,8 @@
         <property name="nameOfCoin" column="nameOfCoin" />
         <property name="shouldPay" column="shouldPay" />
         <property name="payActually" column="payActually" />
-        <property name="convertToRMB" column="convertToRMB" />
-        <property name="changeMoney" column="changeMoney" />
+        <property name="convertToRMB" column="convertToRMB" type="string" />
+        <property name="changeMoney" column="changeMoney" type="string" />
         <property name="payeeId" column="payeeId" />
     </class>
 </hibernate-mapping>

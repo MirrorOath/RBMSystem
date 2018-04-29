@@ -408,8 +408,8 @@ public class EasyUiCtl {
     }
 
     @RequestMapping("easyUISaveTableEnds")
-    public @ResponseBody TableEnds easyUISaveTableEnds(Integer streamId, String date, Integer typeOfCoin,
-            Integer nameOfCoin, Double shouldPay, Double payActually, Double convertToRMB, Double changeMoney,
+    public @ResponseBody TableEnds easyUISaveTableEnds(Integer streamId, String date, String typeOfCoin,
+            String nameOfCoin, Double shouldPay, Double payActually, Double convertToRMB, Double changeMoney,
             Integer payeeId) {
         TableEnds obj = new TableEnds();
         obj.setStreamId(streamId);
@@ -426,8 +426,8 @@ public class EasyUiCtl {
     }
 
     @RequestMapping("easyUIUpdateTableEnds")
-    public @ResponseBody TableEnds easyUIUpdateTableEnds(Integer id, Integer streamId, String date, Integer typeOfCoin,
-            Integer nameOfCoin, Double shouldPay, Double payActually, Double convertToRMB, Double changeMoney,
+    public @ResponseBody TableEnds easyUIUpdateTableEnds(Integer id, Integer streamId, String date, String typeOfCoin,
+            String nameOfCoin, Double shouldPay, Double payActually, Double convertToRMB, Double changeMoney,
             Integer payeeId) {
         TableEnds obj = new TableEnds();
         obj.setStreamId(streamId);
