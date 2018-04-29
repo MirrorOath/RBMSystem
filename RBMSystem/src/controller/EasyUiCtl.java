@@ -340,23 +340,25 @@ public class EasyUiCtl {
     }
 
     @RequestMapping("easyUISaveSystemUser")
-    public @ResponseBody SystemUser easyUISaveSystemUser(String name, String password, Integer AUT, String loginTime) {
+    public @ResponseBody SystemUser easyUISaveSystemUser(String name, String password, Integer aut, String loginTime) {
+        if(systemUserDao.getByName(name) != null)
+            return null;
         SystemUser obj = new SystemUser();
         obj.setName(name);
         obj.setPassword(password);
-        obj.setAUT(AUT);
+        obj.setAut(aut);
         obj.setLoginTime(Count.stringToDate(loginTime));
         SystemUser rt = systemUserUDao.save(obj);
         return rt;
     }
 
     @RequestMapping("easyUIUpdateSystemUser")
-    public @ResponseBody SystemUser easyUIUpdateSystemUser(Integer id, String name, String password, Integer AUT,
+    public @ResponseBody SystemUser easyUIUpdateSystemUser(Integer id, String name, String password, Integer aut,
             String loginTime) {
         SystemUser obj = new SystemUser();
         obj.setName(name);
         obj.setPassword(password);
-        obj.setAUT(AUT);
+        obj.setAut(aut);
         obj.setLoginTime(Count.stringToDate(loginTime));
         SystemUser rt = systemUserDao.update(id, obj);
         return rt;

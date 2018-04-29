@@ -15,6 +15,7 @@
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../util/js/navigationBar.js"></script>
     <script src="../util/js/index.js"></script>
+    <script src="ajax.js"></script>
 	<div id="navigationBar"></div>
 
 	<div class="container-fluid">
@@ -23,28 +24,23 @@
 				<div class="row-fluid">
 					<div class="span4"></div>
 					<div class="span4">
-						<form class="form-horizontal" action="./user/signIn.action">
-							<div class="control-group">
-								<label class="control-label" for="inputEmail">用户名</label>
-								<div class="controls">
-									<input id="inputEmail" type="text" />
-								</div>
+						<div class="control-group">
+							<label class="control-label" for="inputName" >用户名</label>
+							<div class="controls">
+								<input id="inputName" type="text" />
 							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputPassword">密码</label>
-								<div class="controls">
-									<input id="inputPassword" type="password" />
-								</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="inputPassword">密码</label>
+							<div class="controls">
+								<input id="inputPassword" type="password" />
 							</div>
-							<div class="control-group">
-								<div class="controls">
-									<label class="checkbox"> <input type="checkbox" />
-										Remember me
-									</label>
-									<button type="submit" class="btn">登陆</button>
-								</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<button onclick="signIn()" type="submit" class="btn">登陆</button>
 							</div>
-						</form>
+						</div>
 					</div>
 					<div class="span4"></div>
 				</div>

@@ -8,7 +8,7 @@
         </id>
         <property name="name" column="name" type="string" />
         <property name="password" column="password" type="string" />
-        <property name="AUT" column="AUT" />
+        <property name="aut" column="AUT" />
         <property name="loginTime" column="loginTime" type="timestamp" />
     </class>
 </hibernate-mapping>
