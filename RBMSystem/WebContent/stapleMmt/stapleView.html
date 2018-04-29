@@ -2,17 +2,102 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" charset="UTF-8" name="viewport"
-    content="width=device-width, initial-scale=1.0">
-<title>原料查看</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"
     media="screen">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/demo/demo.css">
+<script src="../jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
+<script type="text/javascript"
+    src="../jquery-easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+    src="../jquery-easyui/plugins/jquery.datagrid.js"></script>
+<script type="text/javascript" src="../jquery/datagrid-detailview.js"></script>
+<script type="text/javascript" src="../jquery/jquery.edatagrid.js"></script>
+<style type="text/css">
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.dv-table td {
+    border: 0;
+}
+
+.dv-table input {
+    border: 1px solid #ccc;
+}
+</style>
+<script type="text/javascript">
+    $(function() {
+        $('#Staple').edatagrid({
+            url : '../easyUi/easyUIGetStaples.action',
+            saveUrl : '../easyUi/easyUISaveStaple.action',
+            updateUrl : '../easyUi/easyUIUpdateStaple.action',
+            destroyUrl : '../easyUi/easyUIDelStaple.action'
+        });
+    });
+</script>
+<title>原料查看</title>
 
 </head>
 
 <body style="background-color: #878281">
-    <script src="../jquery/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../util/js/navigationBar.js"></script>
+    <div id="navigationBar"></div>
 
+    <div>
+        <table id="Staple" title="Staple"
+            style="width: 700px; height: 250px" toolbar="#StapleToolbar"
+            pagination="true" idField="id" rownumbers="true"
+            fitColumns="true" singleSelect="true">
+            <thead>
+                <tr>
+                    <th field="dishId" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">菜名</th>
+                    <th field="rawMName" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">材料名</th>
+                    <th field="rawMType" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">材料类型</th>
+                    <th field="rawMBrand" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">材料提供商</th>
+                    <th field="rawMOrigin" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">材料起源</th>
+                    <th field="specs" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">规格</th>
+                    <th field="last" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">剩余</th>
+                    <th field="buyUnit" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">买提供商</th>
+                    <th field="depleteUnit" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">出口商</th>
+                    <th field="price" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">价格</th>
+                    <th field="providerId" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">提供商ID</th>
+                </tr>
+            </thead>
+        </table>
+        <div id="StapleToolbar">
+            <a href="#Staple" class="easyui-linkbutton"
+                iconCls="icon-add" plain="true"
+                onclick="javascript:$('#Staple').edatagrid('addRow')">添加</a>
+            <a href="#Staple" class="easyui-linkbutton"
+                iconCls="icon-remove" plain="true"
+                onclick="javascript:$('#Staple').edatagrid('destroyRow')">删除</a>
+            <a href="#Staple" class="easyui-linkbutton"
+                iconCls="icon-save" plain="true"
+                onclick="javascript:$('#Staple').edatagrid('saveRow')">保存</a>
+            <a href="#Staple" class="easyui-linkbutton"
+                iconCls="icon-undo" plain="true"
+                onclick="javascript:$('#Staple').edatagrid('cancelRow')">取消</a>
+        </div>
+    </div>
 </body>
 </html>

@@ -6,9 +6,9 @@ public class Orders {
     private String dishType;
     private Integer dishNumber;
     private String dishName;
-    private Integer isOrdered;
-    private Integer isGifts;
-    private Integer isBack;
+    private String isOrdered;
+    private String isGifts;
+    private String isBack;
     private Double price;
     private Double discount;
     private Integer producterId;
@@ -53,27 +53,27 @@ public class Orders {
         this.dishName = dishName;
     }
 
-    public Integer getIsOrdered() {
+    public String getIsOrdered() {
         return isOrdered;
     }
 
-    public void setIsOrdered(Integer isOrdered) {
+    public void setIsOrdered(String isOrdered) {
         this.isOrdered = isOrdered;
     }
 
-    public Integer getIsGifts() {
+    public String getIsGifts() {
         return isGifts;
     }
 
-    public void setIsGifts(Integer isGifts) {
+    public void setIsGifts(String isGifts) {
         this.isGifts = isGifts;
     }
 
-    public Integer getIsBack() {
+    public String getIsBack() {
         return isBack;
     }
 
-    public void setIsBack(Integer isBack) {
+    public void setIsBack(String isBack) {
         this.isBack = isBack;
     }
 
@@ -103,7 +103,7 @@ public class Orders {
 
     @Override
     public String toString() {
-        return "POrders [id=" + id + ", streamNumber=" + streamNumber + ", dishType=" + dishType + ", dishNumber="
+        return "Orders [id=" + id + ", streamNumber=" + streamNumber + ", dishType=" + dishType + ", dishNumber="
                 + dishNumber + ", dishName=" + dishName + ", isOrdered=" + isOrdered + ", isGifts=" + isGifts
                 + ", isBack=" + isBack + ", price=" + price + ", discount=" + discount + ", producterId=" + producterId
                 + "]";

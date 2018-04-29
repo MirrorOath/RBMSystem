@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>物品管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/demo/demo.css">
+<script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
+<script type="text/javascript"
+    src="../jquery-easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+    src="../jquery-easyui/plugins/jquery.datagrid.js"></script>
+<script type="text/javascript" src="../jquery/datagrid-detailview.js"></script>
+<script type="text/javascript" src="../jquery/jquery.edatagrid.js"></script>
+<style type="text/css">
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.dv-table td {
+    border: 0;
+}
+
+.dv-table input {
+    border: 1px solid #ccc;
+}
+</style>
+<script type="text/javascript">
+
+    $(function() {
+        $('#Objects').edatagrid({
+            url : '../easyUi/easyUIGetObjectss.action',
+            saveUrl : '../easyUi/easyUISaveObjects.action',
+            updateUrl : '../easyUi/easyUIUpdateObjects.action',
+            destroyUrl : '../easyUi/easyUIDelObjects.action'
+        });
+    });
+
+</script>
+<title>Insert title here</title>
+</head>
+
+<body style="background-color: #878281">
+    <script src="../util/js/navigationBar.js"></script>
+    <div id="navigationBar"></div>
+    
+    <div>
+        <table id="Objects" title="Objects"
+            style="width: 700px; height: 250px"
+            toolbar="#ObjectsToolbar" pagination="true" idField="id"
+            rownumbers="true" fitColumns="true" singleSelect="true">
+            <thead>
+                <tr>
+                    <th field="name" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">物品名</th>
+                    <th field="count" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">数量</th>
+                    <th field="outCount" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">已出数量</th>
+                    <th field="lost" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">丢失</th>
+                    <th field="price" width="50"
+                        editor="{type:'validatebox',options:{required:true}}">价格</th>
+                </tr>
+            </thead>
+        </table>
+        <div id="ObjectsToolbar">
+            <a href="#Objects" class="easyui-linkbutton"
+                iconCls="icon-add" plain="true"
+                onclick="javascript:$('#Objects').edatagrid('addRow')">添加</a>
+            <a href="#Objects" class="easyui-linkbutton"
+                iconCls="icon-remove" plain="true"
+                onclick="javascript:$('#Objects').edatagrid('destroyRow')">删除</a>
+            <a href="#Objects" class="easyui-linkbutton"
+                iconCls="icon-save" plain="true"
+                onclick="javascript:$('#Objects').edatagrid('saveRow')">保存</a>
+            <a href="#Objects" class="easyui-linkbutton"
+                iconCls="icon-undo" plain="true"
+                onclick="javascript:$('#Objects').edatagrid('cancelRow')">取消</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" charset="UTF-8" name="viewport"
+	content="width=device-width, initial-scale=1.0">
+<title>欢迎光临</title>
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	media="screen">
+
+</head>
+
+<body onload="conBase()" style="background-color: #878281">
+	<script src="../jquery/jquery.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../util/js/navigationBar.js"></script>
+    <script src="../util/js/index.js"></script>
+	<div id="navigationBar"></div>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="row-fluid">
+					<div class="span4"></div>
+					<div class="span4">
+						<form class="form-horizontal" action="./user/signIn.action">
+							<div class="control-group">
+								<label class="control-label" for="inputEmail">用户名</label>
+								<div class="controls">
+									<input id="inputEmail" type="text" />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputPassword">密码</label>
+								<div class="controls">
+									<input id="inputPassword" type="password" />
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<label class="checkbox"> <input type="checkbox" />
+										Remember me
+									</label>
+									<button type="submit" class="btn">登陆</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="span4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

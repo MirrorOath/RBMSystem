@@ -30,7 +30,7 @@ public class EasyUiCtl {
     @Autowired
     UtilDao<Objects> objectsUDao;
     @Autowired
-    UtilDao<Orders> pOordersUDao;
+    UtilDao<Orders> ordersUDao;
     @Autowired
     UtilDao<Staple> stapleUDao;
     @Autowired
@@ -56,7 +56,7 @@ public class EasyUiCtl {
     @Autowired
     ObjectsDao objectsDao;
     @Autowired
-    POrdersDao pOrdersDao;
+    POrdersDao ordersDao;
     @Autowired
     StapleDao stapleDao;
     @Autowired
@@ -263,25 +263,25 @@ public class EasyUiCtl {
 
     @RequestMapping("easyUIGetOrderss")
     public @ResponseBody List<Orders> easyUIGetOrderss() {
-        List<Orders> Orders = pOordersUDao.getAll("Orders");
+        List<Orders> Orders = ordersUDao.getAll("Orders");
         return Orders;
     }
 
     @RequestMapping("easyUISaveOrders")
     public @ResponseBody Orders easyUISaveOrders(Orders obj) {
-        Orders rt = pOordersUDao.save(obj);
+        Orders rt = ordersUDao.save(obj);
         return rt;
     }
 
     @RequestMapping("easyUIUpdateOrders")
     public @ResponseBody Orders easyUIUpdateOrders(Integer id, Orders obj) {
-        Orders rt = pOrdersDao.update(id, obj);
+        Orders rt = ordersDao.update(id, obj);
         return rt;
     }
 
     @RequestMapping("easyUIDelOrders")
     public @ResponseBody boolean easyUIDelOrders(Integer id) {
-        pOordersUDao.del(pOordersUDao.getById("Orders", id));
+        ordersUDao.del(ordersUDao.getById("Orders", id));
         return true;
     }
 

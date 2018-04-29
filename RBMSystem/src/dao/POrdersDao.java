@@ -22,6 +22,7 @@ public class POrdersDao {
         oldObj.setIsGifts(newObj.getIsGifts());
         oldObj.setIsBack(newObj.getIsBack());
         oldObj.setPrice(newObj.getPrice());
+        oldObj.setDiscount(newObj.getDiscount());
         oldObj.setProducterId(newObj.getProducterId());
 
         tx.commit();

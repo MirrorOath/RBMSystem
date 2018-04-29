@@ -10,9 +10,9 @@
         <property name="dishType" column="dishType" type="string" />
         <property name="dishNumber" column="dishNumber" />
         <property name="dishName" column="dishName" type="string" />
-        <property name="isOrdered" column="isOrdered" />
-        <property name="isGifts" column="isGifts" />
-        <property name="isBack" column="isBack" />
+        <property name="isOrdered" column="isOrdered" type="string" />
+        <property name="isGifts" column="isGifts" type="string" />
+        <property name="isBack" column="isBack" type="string" />
         <property name="price" column="price" />
         <property name="discount" column="discount" />
         <property name="producterId" column="producterId" />
