@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="dao.tables" auto-import="true">
+<hibernate-mapping package="dao.tables"
+    auto-import="true">
     <class name="SystemUser">
-        <!-- 主键 ，映射-->
+        <!-- 主键 ，映射 -->
         <id name="id" column="id">
-            <generator class="native"/>
+            <generator class="native" />
         </id>
         <property name="name" column="name" type="string" />
-        <property name="password" column="password" type="string" />
+        <property name="password" column="password"
+            type="string" />
         <property name="aut" column="AUT" />
-        <property name="loginTime" column="loginTime" type="timestamp" />
+        <property name="loginTime" column="loginTime"
+            type="timestamp" />
     </class>
 </hibernate-mapping>

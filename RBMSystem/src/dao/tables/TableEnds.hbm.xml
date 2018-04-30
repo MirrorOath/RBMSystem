@@ -8,12 +8,12 @@
         </id>
         <property name="streamId" column="streamId" />
         <property name="date" column="date" type="timestamp" />
-        <property name="typeOfCoin" column="typeOfCoin" />
-        <property name="nameOfCoin" column="nameOfCoin" />
+        <property name="typeOfCoin" column="typeOfCoin" type="string" />
+        <property name="nameOfCoin" column="nameOfCoin" type="string" />
         <property name="shouldPay" column="shouldPay" />
         <property name="payActually" column="payActually" />
-        <property name="convertToRMB" column="convertToRMB" type="string" />
-        <property name="changeMoney" column="changeMoney" type="string" />
+        <property name="convertToRMB" column="convertToRMB" />
+        <property name="changeMoney" column="changeMoney" />
         <property name="payeeId" column="payeeId" />
     </class>
 </hibernate-mapping>

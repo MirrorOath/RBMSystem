@@ -101,8 +101,8 @@ public class FrontOfficeCtl {
     
 
     @RequestMapping("endTable")
-    public @ResponseBody Date endTable(Integer streamId, String typeOfCoin,
-            String nameOfCoin, Double shouldPay, Double payActually, Double convertToRMB, Double changeMoney,
+    public @ResponseBody TableEnds endTable(Integer streamId, String typeOfCoin,
+            String nameOfCoin, Double shouldPay, Double payActually, Double changeMoney,
             Integer payeeId) {
         TableEnds obj = new TableEnds();
         obj.setStreamId(streamId);
@@ -111,10 +111,20 @@ public class FrontOfficeCtl {
         obj.setNameOfCoin(nameOfCoin);
         obj.setShouldPay(shouldPay);
         obj.setPayActually(payActually);
-        obj.setConvertToRMB(convertToRMB);
+        Double cc = 0.0;
+        if("美元".equals(nameOfCoin))
+            cc = 6.6;
+        else if("日元".equals(nameOfCoin))
+            cc = 0.16;
+        else if("欧元".equals(nameOfCoin))
+            cc = 10.0;
+        else if("人名币".equals(nameOfCoin))
+            cc = 1.0;
+        obj.setConvertToRMB(cc * payActually);
         obj.setChangeMoney(changeMoney);
         obj.setPayeeId(payeeId);
-        return obj.getDate();
+        tableEndsUDao.save(obj);
+        return obj;
     }
 
 }

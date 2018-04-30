@@ -160,14 +160,13 @@ function endTable() {
     var nameOfCoin = document.getElementById("nameOfCoin").value;
     var shouldPay = document.getElementById("shouldPay").value;
     var payActually = document.getElementById("payActually").value;
-    var convertToRMB = document.getElementById("convertToRMB").value;
     var changeMoney = document.getElementById("changeMoney").value;
     var payeeId = document.getElementById("payeeId").value;
     if (streamId == null || typeOfCoin == null || nameOfCoin == null
-            || shouldPay == null || convertToRMB == null || changeMoney == null
+            || shouldPay == null || changeMoney == null
             || payActually == null || payeeId == null || streamId == ""
             || typeOfCoin == "" || nameOfCoin == "" || shouldPay == ""
-            || payActually == "" || convertToRMB == "" || changeMoney == ""
+            || payActually == "" || changeMoney == ""
             || payeeId == "") {
         alert("表格不完整,收台失败");
         return;
@@ -181,7 +180,6 @@ function endTable() {
             nameOfCoin : nameOfCoin,
             shouldPay : shouldPay,
             payActually : payActually,
-            convertToRMB : convertToRMB,
             changeMoney : changeMoney,
             payeeId : payeeId
         },
@@ -189,7 +187,8 @@ function endTable() {
         dateType : "json",
         success : function(data) {
             alert("收台成功");
-            document.getElementById("endDate").value = data;
+            document.getElementById("endDate").value = data.date;
+            document.getElementById("convertToRMB").value = data.convertToRMB;
         }
     })
 
