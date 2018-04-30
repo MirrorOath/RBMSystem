@@ -8,6 +8,7 @@ public class SystemUser {
     private String password;
     private Integer aut;
     private Date loginTime;
+    private boolean success;
 
     public Integer getId() {
         return id;
@@ -49,10 +50,18 @@ public class SystemUser {
         this.loginTime = loginTime;
     }
 
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
     @Override
     public String toString() {
-        return "SystemUser [id=" + id + ", name=" + name + ", password=" + password + ", AUT=" + aut + ", loginTime="
-                + loginTime + "]";
+        return "SystemUser [id=" + id + ", name=" + name + ", password=" + password + ", aut=" + aut + ", loginTime="
+                + loginTime + ", success=" + success + "]";
     }
 
 }

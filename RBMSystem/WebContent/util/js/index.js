@@ -1,6 +1,6 @@
 function conBase() {
     $.ajax({
-        url : "special/conBase.action",
+        url : "../special/conBase.action",
         data : {},
         type : "post",
         dateType : "json",
@@ -11,7 +11,7 @@ function conBase() {
 
 function sendAjax() {
     $.ajax({
-        url : "test/test.action",
+        url : "../test/test.action",
         data : {
             "id" : 1
         },

@@ -17,4 +17,18 @@ function signIn(){
                 alert("登陆失败");
         }
     })
+    
+    
+    $.ajax({
+        url : "../system/getUser.action",
+        type : "post",
+        dateType : "json",
+        success : function(data) {
+            if (data.success) {
+                document.getElementById(name).innerHTML = data.name;
+            } else {
+
+            }
+        }
+    })
 }
