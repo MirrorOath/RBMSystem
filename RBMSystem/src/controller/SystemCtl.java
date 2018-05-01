@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import dao.SystemUserDao;
+import dao.tables.Employee;
 import dao.tables.SystemUser;
 import dao.util.UtilDao;
 
@@ -37,14 +38,23 @@ public class SystemCtl {
     
     @RequestMapping("getUser")
     public @ResponseBody SystemUser getUser(HttpSession session) {
-        SystemUser userInfo = (SystemUser) session.getAttribute("userInfo");
-        if(userInfo == null) {
-            userInfo = new SystemUser();
-            userInfo.setSuccess(false);
+        SystemUser admin = (SystemUser) session.getAttribute("admin");
+        Employee userInfo = (Employee) session.getAttribute("userInfo");
+        if(userInfo != null) {
+            admin = new SystemUser();
+            admin.setName(userInfo.getName());
+            admin.setSuccess(true);
+            return admin;
         }
-        else
-            userInfo.setSuccess(true);
-        return userInfo;
+        else if (admin != null) {
+            admin.setSuccess(true);
+            return admin;
+        }
+        else {
+            admin = new SystemUser();
+            admin.setSuccess(false);
+            return admin;
+        }
     }
     
 

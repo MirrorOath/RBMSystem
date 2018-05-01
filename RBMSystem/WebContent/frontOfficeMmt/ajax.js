@@ -186,6 +186,10 @@ function endTable() {
         type : "post",
         dateType : "json",
         success : function(data) {
+            if(streamId != data.streamId){
+                alert("收台失败");
+                return;
+            }
             alert("收台成功");
             document.getElementById("endDate").value = data.date;
             document.getElementById("convertToRMB").value = data.convertToRMB;

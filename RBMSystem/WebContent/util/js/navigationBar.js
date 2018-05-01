@@ -80,19 +80,9 @@ window.onload = function() {
                                 + "<a data-slide='next' href='#carousel-302690' class='right carousel-control'>›</a>"
                                 + "</div></div></div></div>";
                         document.getElementById("signInDiv").innerHTML = str;
-                    } else {
-                        str = "";
-                        str += "<div class='container-fluid'><div class='row-fluid'>"
-                                + "<div class='span12'><div class='row-fluid'><div class='span4'></div>"
-                                + "<div class='span4'><div class='control-group'>"
-                                + "<label class='control-label' for='inputName' >用户名</label>"
-                                + "<div class='controls'><input id='inputName' type='text' /></div></div>"
-                                + "<div class='control-group'><label class='control-label' for='inputPassword'>密码</label>"
-                                + "<div class='controls'><input id='inputPassword' type='password' /></div></div>"
-                                + "<div class='control-group'><div class='controls'>"
-                                + "<button onclick='signIn()' type='submit' class='btn'>登陆</button></div></div></div>"
-                                + "<div class='span4'></div></div></div></div></div>";
-                        document.getElementById("signInDiv").innerHTML = str;
+                    }
+                    else{
+                        
                     }
                 }
             })
