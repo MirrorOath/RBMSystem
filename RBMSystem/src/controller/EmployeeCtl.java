@@ -76,6 +76,8 @@ public class EmployeeCtl {
             if (obj == null)
                 return -1;
             if (password.equals(obj.getPassword())) {
+                session.removeAttribute("admin");
+                session.removeAttribute("userInfo");
                 session.setAttribute("admin", obj);
                 return 0;
             }
@@ -85,6 +87,8 @@ public class EmployeeCtl {
             if (obj == null)
                 return -1;
             if (password.equals(obj.getPassword())) {
+                session.removeAttribute("admin");
+                session.removeAttribute("userInfo");
                 session.setAttribute("userInfo", obj);
                 return 1;
             }
