@@ -8,6 +8,7 @@ public class Menu {
     private Double price;
     private Double discount;
     private String note;
+    private boolean success;
 
     public Integer getId() {
         return id;
@@ -65,10 +66,18 @@ public class Menu {
         this.note = note;
     }
 
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
     @Override
     public String toString() {
         return "Menu [id=" + id + ", name=" + name + ", type=" + type + ", specs=" + specs + ", price=" + price
-                + ", discount=" + discount + ", note=" + note + "]";
+                + ", discount=" + discount + ", note=" + note + ", success=" + success + "]";
     }
 
 }

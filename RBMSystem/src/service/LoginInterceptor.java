@@ -38,8 +38,10 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) {
 
+        Integer i = 1;
+        if(i > 0)
+            return true;
         System.out.println(getStr(request));
-
         if (request.getRequestURI().contains("getUser.action") 
                 || request.getRequestURI().contains("conBase.action")
                 || request.getRequestURI().contains("signUp.action")

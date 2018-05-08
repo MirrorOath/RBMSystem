@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"
+    media="screen">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/demo/demo.css">
+<script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
+<script type="text/javascript"
+    src="../jquery-easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+    src="../jquery-easyui/plugins/jquery.datagrid.js"></script>
+<script type="text/javascript" src="../jquery/datagrid-detailview.js"></script>
+<script type="text/javascript" src="../jquery/jquery.edatagrid.js"></script>
+<style type="text/css">
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.dv-table td {
+    border: 0;
+}
+
+.dv-table input {
+    border: 1px solid #ccc;
+}
+</style>
+<script type="text/javascript">
+    $(function() {
+        $('#Menu').edatagrid({
+            url : '../easyUi/easyUIGetMenus.action',
+            saveUrl : '../easyUi/easyUISaveMenu.action',
+            updateUrl : '../easyUi/easyUIUpdateMenu.action',
+            destroyUrl : '../easyUi/easyUIDelMenu.action'
+        });
+    });
+
+    function MyJprintf(){
+        $("#recipePrint").jqprint();
+    }
+    
+    function getMenuInfo(){
+        menuId = document.getElementById("MenuId").value;
+        $.ajax({
+            url : "../menu/getMenuInfo.action",
+            data : {
+                menuId : menuId  
+            },
+            type : "post",
+            dateType : "json",
+            success : function(data) {
+                if(data.success == false)
+                    alert("菜单号不存在");
+                str = "";
+                str +=  "<div class='row-fluid'><div class='span1'></div>"
+                        + "<div class='span9'><div class='span6'>"
+                        + "<p> 菜单名:" + data.name
+                        + "</p><p> 菜类:" + data.type 
+                        + "</p><p> 备注:" + data.note 
+                        + "</p></div><div class='span6'>"
+                        + "<p> 规格:" + data.specs
+                        + "</p><p> 价格:" + data.price 
+                        + "</p><p> 折扣:" + data.discount 
+                        + "</p></div></div><div class='span2'></div></div>";
+                document.getElementById("recipePrint").innerHTML = str;
+            }
+        })
+    }
+    
+</script>
+<title>菜谱打印</title>
+
+</head>
+
+<body style="background-color: #878281">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../util/js/navigationBar.js"></script>
+    <script src="http://www.jq22.com/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../jqprint/jquery.jqprint-0.3.js"></script>
+    <div id="navigationBar"></div>
+
+
+    <label class="control-label"
+        for="MenuId">菜单号</label>
+    <input class="controls" id="MenuId" onchange="javascript:getMenuInfo()" />
+    <div id="recipePrint">
+
+    </div>
+    <div>
+        <button onclick="MyJprintf()">打印菜谱</button>
+    </div>
+
+
+</body>
+</html>

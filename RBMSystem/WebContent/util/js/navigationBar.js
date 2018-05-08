@@ -25,6 +25,7 @@ window.onload = function() {
             + "<strong class='caret'></strong></a>"
             + "<ul class='dropdown-menu'>"
             + "<li><a href='../menuMmt/recipeSettings.html'>菜谱设置</a></li>"
+            + "<li><a href='../menuMmt/recipePrint.html'>菜谱打印</a></li>"
             + "</ul></li>"
             + "<li class='dropdown'>"
             + "<a data-toggle='dropdown' class='dropdown-toggle' href='#'>原料管理"
@@ -54,38 +55,36 @@ window.onload = function() {
             + "</ul></li></ul>" + "</div></div></div></div></div></div></div>";
     document.getElementById("navigationBar").innerHTML = str;
 
-    $
-            .ajax({
-                url : "../system/getUser.action",
-                type : "post",
-                dateType : "json",
-                success : function(data) {
-                    if (data.success == true) {
-                        document.getElementById("userName").innerHTML = "欢迎您："
-                                + data.name;
-                        str = "";
-                        str += "<div class='container-fluid'><div class='row-fluid'><div class='span12'>"
-                                + "<div class='carousel slide' id='carousel-302690'><ol class='carousel-indicators'>"
-                                + "<li class='active' data-slide-to='0' data-target='#carousel-302690'></li>"
-                                + "<li data-slide-to='1' data-target='#carousel-302690'></li>"
-                                + "<li data-slide-to='2' data-target='#carousel-302690'></li></ol>"
-                                + "<div class='carousel-inner'><div class='item active'>"
-                                + "<img alt='' src='../img/1.jpg' /><div class='carousel-caption'>"
-                                + "<h4>美食</h4><p>美食即刻享</p></div></div><div class='item'>"
-                                + "<img alt='' src='../img/2.jpg' /><div class='carousel-caption'>"
-                                + "<h4>美食</h4><p>美食即刻享</p></div></div><div class='item'>"
-                                + "<img alt='' src='../img/3.jpg' /><div class='carousel-caption'>"
-                                + "<h4>美食</h4><p>美食即刻享</p></div></div>"
-                                + "</div> <a data-slide='prev' href='#carousel-302690' class='left carousel-control'>‹</a>"
-                                + "<a data-slide='next' href='#carousel-302690' class='right carousel-control'>›</a>"
-                                + "</div></div></div></div>";
-                        document.getElementById("signInDiv").innerHTML = str;
-                    }
-                    else{
-                        
-                    }
-                }
-            })
+    $.ajax({
+        url : "../system/getUser.action",
+        type : "post",
+        dateType : "json",
+        success : function(data) {
+            if (data.success == true) {
+                document.getElementById("userName").innerHTML = "欢迎您："
+                        + data.name + "<a href='javascript:signOut()'>退出登陆</a>";
+                str = "";
+                str += "<div class='container-fluid'><div class='row-fluid'><div class='span12'>"
+                        + "<div class='carousel slide' id='carousel-302690'><ol class='carousel-indicators'>"
+                        + "<li class='active' data-slide-to='0' data-target='#carousel-302690'></li>"
+                        + "<li data-slide-to='1' data-target='#carousel-302690'></li>"
+                        + "<li data-slide-to='2' data-target='#carousel-302690'></li></ol>"
+                        + "<div class='carousel-inner'><div class='item active'>"
+                        + "<img alt='' src='../img/1.jpg' /><div class='carousel-caption'>"
+                        + "<h4>美食</h4><p>美食即刻享</p></div></div><div class='item'>"
+                        + "<img alt='' src='../img/2.jpg' /><div class='carousel-caption'>"
+                        + "<h4>美食</h4><p>美食即刻享</p></div></div><div class='item'>"
+                        + "<img alt='' src='../img/3.jpg' /><div class='carousel-caption'>"
+                        + "<h4>美食</h4><p>美食即刻享</p></div></div>"
+                        + "</div> <a data-slide='prev' href='#carousel-302690' class='left carousel-control'>‹</a>"
+                        + "<a data-slide='next' href='#carousel-302690' class='right carousel-control'>›</a>"
+                        + "</div></div></div></div>";
+                document.getElementById("signInDiv").innerHTML = str;
+            } else {
+                
+            }
+        }
+    })
 
     $.ajax({
         url : "../special/conBase.action",
@@ -95,5 +94,34 @@ window.onload = function() {
         success : function(data) {
         }
     })
+    
+    
 
+    pathname = window.location.pathname;
+    $.ajax({
+        url : "../special/isPassAUT.action",
+        data : {
+            pathname : pathname
+        },
+        type : "post",
+        dateType : "json",
+        success : function(data) {
+            if(data == false){
+                alert("检测到越权，即将返回首页");
+                self.location = "../index.html";
+            }
+        }
+    })
+
+}
+
+function signOut(){
+    $.ajax({
+        url : "../special/signOut.action",
+        type : "post",
+        dateType : "json",
+        success : function(data) {
+            self.location = "../index.html";
+        }
+    })
 }

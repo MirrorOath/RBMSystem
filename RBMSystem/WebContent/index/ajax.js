@@ -126,7 +126,7 @@ function signIn() {
                 self.location="../index.html";
                 break;
             case 1:
-                alert("登陆成功:服务员");
+                alert("登陆成功:员工");
                 self.location="../index.html";
                 break;
             }
