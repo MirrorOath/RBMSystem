@@ -59,8 +59,10 @@ form {
             fitColumns="true" singleSelect="true">
             <thead>
                 <tr>
+                    <th field="id" width="50"
+                        editor="{type:'validatebox',options:{readonly:true}}">原料id</th>
                     <th field="dishId" width="50"
-                        editor="{type:'validatebox',options:{required:true}}">菜名</th>
+                        editor="{type:'validatebox',options:{required:true}}">菜ID</th>
                     <th field="rawMName" width="50"
                         editor="{type:'validatebox',options:{required:true}}">材料名</th>
                     <th field="rawMType" width="50"
