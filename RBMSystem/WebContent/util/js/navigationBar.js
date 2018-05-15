@@ -16,7 +16,7 @@ window.onload = function() {
             + "<strong class='caret'></strong></a>"
             + "<ul class='dropdown-menu'>"
             + "<li><a href='../frontOfficeMmt/mealMmt.html'>用餐管理</a></li>"
-            + "<li><a href='../frontOfficeMmt/mealStsts.html'>用餐统计</a></li>"
+            + "<li><a href='../frontOfficeMmt/mealGetDay.html'>用餐统计</a></li>"
             + "<li><a href='../frontOfficeMmt/mealStsts.html'>用餐账目查询</a></li>"
             + "<li><a href='../frontOfficeMmt/itemMmt.html'>物品管理</a></li>"
             + "</ul></li>"

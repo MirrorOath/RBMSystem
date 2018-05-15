@@ -1,9 +1,14 @@
 package dao;
 
+import java.util.Date;
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
+import controller.util.Count;
 import dao.tables.Orders;
 import dao.util.UtilFactory;
 
@@ -28,6 +33,20 @@ public class POrdersDao {
         tx.commit();
         session.close();
         return oldObj;
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Orders> getBystId(Integer id){
+        Session session = UtilFactory.getSession();
+        Transaction tx = session.beginTransaction();
+        
+        Query query = session.createQuery("FROM Orders WHERE streamNumber = ?");
+        query.setString(0, id.toString());
+        List<Orders> objs = query.list();
+        
+        tx.commit();
+        session.close();
+        return objs;
     }
 
 }

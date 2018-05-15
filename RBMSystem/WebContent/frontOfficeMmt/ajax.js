@@ -197,3 +197,43 @@ function endTable() {
     })
 
 }
+
+function forDateOrders(){
+    var date = document.getElementById("forDate").value;
+    $.ajax({
+        url : "../special/forDateOrders.action",
+        data : {
+            date : date
+        },
+        type : "post",
+        dateType : "json",
+        success : function(data) {
+            str = "";
+            str += "<table class='table table-hover'><thead><tr>"
+                    + "<th>座位流ID</th>" + "<th>菜类</th>" + "<th>菜数</th>"
+                    + "<th>菜名</th>" + "<th>是否下单</th>"
+                    + "<th>是否赠送</th>" + "<th>是否退回</th>" 
+                    + "<th>价格</th>" + "<th>折扣</th>" 
+                    + "<th>做菜人ID</th>" + "</tr></thead><tbody>";
+            var total = 0;
+            $.each(data, function(n, index){
+                total += index.price;
+                str += "<tr class='" + ((n%2) == 1 ? "success" : "info") + "'>"
+                    + "<td>" + index.streamNumber + "</td>"
+                    + "<td>" + index.dishType + "</td>"
+                    + "<td>" + index.dishNumber + "</td>"
+                    + "<td>" + index.dishName + "</td>"
+                    + "<td>" + (index.isOrdered == true ? "是" : "否") + "</td>"
+                    + "<td>" + (index.isGifts == true ? "是" : "否") + "</td>"
+                    + "<td>" + (index.isBack == true ? "是" : "否") + "</td>"
+                    + "<td>" + index.price + "</td>"
+                    + "<td>" + index.discount + "</td>"
+                    + "<td>" + index.producterId + "</td>"
+                    + "</tr>";
+            });
+            str += "</tbody></table>";
+            str += "总价: " + total;
+            document.getElementById("forDateOut").innerHTML = str;
+        }
+    })
+}

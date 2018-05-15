@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"
+    media="screen">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css"
+    href="../jquery-easyui/demo/demo.css">
+<script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
+<script type="text/javascript"
+    src="../jquery-easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+    src="../jquery-easyui/plugins/jquery.datagrid.js"></script>
+<script type="text/javascript" src="../jquery/datagrid-detailview.js"></script>
+<script type="text/javascript" src="../jquery/jquery.edatagrid.js"></script>
+<style type="text/css">
+form {
+    margin: 0;
+    padding: 0;
+}
+.dv-table td {
+    border: 0;
+}
+.dv-table input {
+    border: 1px solid #ccc;
+}
+</style>
+<title>用餐统计</title>
+</head>
+
+<body style="background-color: #878281">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../util/js/navigationBar.js"></script>
+    <script src="ajax.js"></script>
+    <div id="navigationBar"></div>
+
+    <div>
+        <div>
+            <div class="form-group">
+                <input class="form-control" type="date" maxlenght=100
+                    id="forDate" />
+            </div>
+            <button onclick="javascript:forDateOrders()"
+                class="btn btn-default">查询</button>
+            <div id="forDateOut"></div>
+        </div>
+    </div>
+
+
+</body>
+</html>
